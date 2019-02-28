@@ -14,10 +14,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      Hexo
+      芥末
     
   </title>
-  <meta name="author" content="John Doe">
+  <meta name="author" content="mustard">
   <meta name="keywords" content="">
   <meta name="description" content="">
 	<!-- favicon -->
@@ -32,7 +32,9 @@
 	<script src="/js/jquery-2.1.1.min.js"></script>
 
   <!-- leancloud -->
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <!-- <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script> -->
+  <script src="/js/av-core-mini-0.6.4.js"></script>
 <script src="/js/leancloud.js"></script>
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
@@ -53,7 +55,7 @@
 
 
 <!-- header -->
-<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/v1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+<header class="fixbackground" data-img-mode="random" data-normal-src="/img/v1.jpg" data-random-max="27" data-random-src="/img/Random-img/">
 	<div class="mask">
 		<div class="h-header">
 			<div id="logo-S">
@@ -165,7 +167,8 @@
 	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow"></a>
 	<span id="Beijing_z43d"></span>
 </div>
-<script src="//widget.time.is/zh.js"></script>
+<!-- <script src="//widget.time.is/zh.js"></script> -->
+<script src="../../../js/zh.js"></script>
 <script>
 	time_is_widget.init({
 		Beijing_z43d:{
@@ -269,37 +272,245 @@
 
 
 
-	<!--cart style-->
-	<div class="layout-cart">
-	<div id="layout-cart">
-		
+	<!--pure style-->
+	<div class="layout-pure">
+	<div id="layout-pure">	
+	
 		<div class="post" id="post">
-			<a class="post-cover" href="/2019/01/08/hello-world/" title=" Hello World ">
-				<img src="/img/cart_cover.jpg">
-			</a>
-
 			<div class="post-text">
-				<p class="post-time">
-					一月 8日, 2019
-				</p>	
-				<h3 class="post-title" id="post-title-index">
-					<a href="/2019/01/08/hello-world/" title="Hello World">
-						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/2019/02/28/zerotier/" itemprop="url">
+		zerotier
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
 						
+							ZeroTier 内网穿透ZeroTier官网
+
+所有需要进行内网穿透的机器必须都安装软件、app，通过添加Zerotier用户的Networks ID加入到同一个组中，组中的所有机器可以互相连接使用
+
+ZeroTier 用户
+登录官网（注册，google直接登录）
+创建Networks查看Networks ID（后续所有机器通过该ID加入虚拟网络段）设置虚拟网络段
+查看成员加入内网穿透Ubuntu`bash下载ZeroTiercurl -s ‘https://pgp.mit.edu/pks/lookup?op=get&amp;search=0x1657198823E52A61&#39;...
+						
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						发布于
+						<i>
+							
+	<a href="/2019/02/28/zerotier/" itemprop="url">
+		<time datetime="2019-02-28T13:46:15.000Z" itemprop="datePublished">
+	  		2019-02-28
+	  </time>
+	</a> 		
+
+						</i>
+					</span>
+					/
+					
+
+    <span class="leancloud_visitors" id="/2019/02/28/zerotier/_visitors" data-url="/2019/02/28/zerotier/" data-title="zerotier">
+        热度
+        <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
+    </span>
+    
+    /
+
+
+
+    <span class="leancloud_likes" id="/2019/02/28/zerotier/_likes" data-url="/2019/02/28/zerotier/" data-title="zerotier" rel="unlike">
+        喜欢
+        <i class="fa fa-heart"></i>
+        <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
+    </span>
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+
+	<script>
+		var appid = 'dX--',
+            appkey = 'dx--';	  
+        AnnieLeancloud(appid, appkey);         
+	</script>
+    
+
+
+ 
+					
+						<span class="right">      	
+							<a href="/2019/02/28/zerotier/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
+	<a href="/2019/01/09/django/" itemprop="url">
+		django
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						
+							企业级开发框架-Django开发环境
+在开发Python应用程序的时候，系统安装的Python3只有一个版本：3.4。所有第三方的包都会被pip安装到Python3的site-packages目录下。
+如果我们要同时开发多个应用程序，那这些应用程序都会共用一个Python，就是安装在系统的Python 3。如果应用A需要jinja 2.7，而应用B需要jinja 2.6怎么办？
+这种情况下，每个应用可能需要各自拥有一套“独立”的Python运行环境。virtualenv就是用来为一个应用创建一套“隔离”的Python运行环境.
+
+
+安装virtualenv
+sudo pip instal...
+						
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						发布于
+						<i>
+							
+	<a href="/2019/01/09/django/" itemprop="url">
+		<time datetime="2019-01-09T06:01:27.000Z" itemprop="datePublished">
+	  		2019-01-09
+	  </time>
+	</a> 		
+
+						</i>
+					</span>
+					/
+					
+
+    <span class="leancloud_visitors" id="/2019/01/09/django/_visitors" data-url="/2019/01/09/django/" data-title="django">
+        热度
+        <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
+    </span>
+    
+    /
+
+
+
+    <span class="leancloud_likes" id="/2019/01/09/django/_likes" data-url="/2019/01/09/django/" data-title="django" rel="unlike">
+        喜欢
+        <i class="fa fa-heart"></i>
+        <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
+    </span>
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+
+	<script>
+		var appid = 'dX--',
+            appkey = 'dx--';	  
+        AnnieLeancloud(appid, appkey);         
+	</script>
+    
+
+
+ 
+					
+						<span class="right">      	
+							<a href="/2019/01/09/django/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
 	<a href="/2019/01/08/hello-world/" itemprop="url">
 		Hello World
 	</a>
 
-					</a>
-				</h3>
-				<p class="post-content">
+				</div>
+
+				<div class="post-content">
 					
 						
-							Welcome to Hexo! This is your very first post. Check documentation for more i...
+							Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post$ hexo new "My New Post"
+
+More info: Writing
+Run server$ hexo server
+
+More...
 						
 					
-				</p>
-				<p class="post-meta">
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						发布于
+						<i>
+							
+	<a href="/2019/01/08/hello-world/" itemprop="url">
+		<time datetime="2019-01-08T15:37:09.785Z" itemprop="datePublished">
+	  		2019-01-08
+	  </time>
+	</a> 		
+
+						</i>
+					</span>
+					/
 					
 
     <span class="leancloud_visitors" id="/2019/01/08/hello-world/_visitors" data-url="/2019/01/08/hello-world/" data-title="Hello World">
@@ -349,38 +560,53 @@
 
 
  
-				</p>
+					
+						<span class="right">      	
+							<a href="/2019/01/08/hello-world/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
 			</div>
 		</div>
-		
+	
 		<div class="post" id="post">
-			<a class="post-cover" href="/2019/01/08/ldap/" title=" ldap ">
-				<img src="https://s2.ax1x.com/2019/01/08/FLmY9g.png">
-			</a>
-
 			<div class="post-text">
-				<p class="post-time">
-					一月 8日, 2019
-				</p>	
-				<h3 class="post-title" id="post-title-index">
-					<a href="/2019/01/08/ldap/" title="ldap">
-						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-						
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
 	<a href="/2019/01/08/ldap/" itemprop="url">
 		ldap
 	</a>
 
-					</a>
-				</h3>
-				<p class="post-content">
+				</div>
+
+				<div class="post-content">
 					
 						
 							LDAP安装# 安装开发环境
-sudo apt-get install libsasl2-dev python-dev libldap2-dev libs...
+sudo apt-get install libsasl2-dev python-dev libldap2-dev libssl-dev
+# 官方文档提供的安装方式，安装在mac的系统python中，/usr/bin/python
+# python2.7 -> ../../System/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7
+sudo python -m pip install python-ldap
+# 在python3.7中安装ldap库，路径为/usr/local/b...
 						
 					
-				</p>
-				<p class="post-meta">
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						发布于
+						<i>
+							
+	<a href="/2019/01/08/ldap/" itemprop="url">
+		<time datetime="2019-01-08T14:44:53.000Z" itemprop="datePublished">
+	  		2019-01-08
+	  </time>
+	</a> 		
+
+						</i>
+					</span>
+					/
 					
 
     <span class="leancloud_visitors" id="/2019/01/08/ldap/_visitors" data-url="/2019/01/08/ldap/" data-title="ldap">
@@ -430,40 +656,61 @@ sudo apt-get install libsasl2-dev python-dev libldap2-dev libs...
 
 
  
-				</p>
+					
+						<span class="right">      	
+							<a href="/2019/01/08/ldap/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
 			</div>
 		</div>
-		
+	
 		<div class="post" id="post">
-			<a class="post-cover" href="/2019/01/08/vps/" title=" vps + shadowsocks 优雅看世界 ">
-				<img src="https://s2.ax1x.com/2019/01/08/FqTlG9.jpg">
-			</a>
-
 			<div class="post-text">
-				<p class="post-time">
-					一月 8日, 2019
-				</p>	
-				<h3 class="post-title" id="post-title-index">
-					<a href="/2019/01/08/vps/" title="vps + shadowsocks 优雅看世界">
-						<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-						
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
 	<a href="/2019/01/08/vps/" itemprop="url">
 		vps + shadowsocks 优雅看世界
 	</a>
 
-					</a>
-				</h3>
-				<p class="post-content">
+				</div>
+
+				<div class="post-content">
 					
 						
 							vps + shadowsocks 优雅看世界vpsvps 提供商
 digitalocean
+# Ubuntu
 ssh root@vpsip
-apt-get -y inst...
+apt-get -y install python-gevent python-pip
+pip install shadowsocks
+# Centos
+yum install epel-release
+yum update
+yum install python-setuptools m2crypto supervisor
+easy_install pip
+pip install shadowsocks
+# set config
+vim /etc/...
 						
 					
-				</p>
-				<p class="post-meta">
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						发布于
+						<i>
+							
+	<a href="/2019/01/08/vps/" itemprop="url">
+		<time datetime="2019-01-08T08:43:15.000Z" itemprop="datePublished">
+	  		2019-01-08
+	  </time>
+	</a> 		
+
+						</i>
+					</span>
+					/
 					
 
     <span class="leancloud_visitors" id="/2019/01/08/vps/_visitors" data-url="/2019/01/08/vps/" data-title="vps + shadowsocks 优雅看世界">
@@ -513,19 +760,24 @@ apt-get -y inst...
 
 
  
-				</p>
+					
+						<span class="right">      	
+							<a href="/2019/01/08/vps/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
 			</div>
 		</div>
-		
-	</div>
 	
+	</div>
+
 	
 	<div id="pagination">
 		
 	</div>
 
 </div>
-	
+
 
 		</main>
 		
@@ -577,7 +829,7 @@ apt-get -y inst...
 	<div class="copyright">
 		<p>
 			 
-				&copy;2017 - 2019, content by John Doe. All Rights Reserved.
+				&copy;2017 - 2019, content by mustard. All Rights Reserved.
 			
 			
 			

@@ -1,0 +1,1006 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+
+	<!DOCTYPE html>
+	<html class="scrollbar">
+		
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      django | 芥末
+    
+  </title>
+  <meta name="author" content="mustard">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+    <!-- jquery -->
+	<script src="/js/jquery-2.1.1.min.js"></script>
+
+  <!-- leancloud -->
+  <!-- <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script> -->
+  <script src="/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="transition">
+					<div class="three-bounce1"></div>
+					<div class="three-bounce2"></div>
+					<div class="three-bounce3"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="random" data-normal-src="/img/v1.jpg" data-random-max="27" data-random-src="/img/Random-img/">
+	<div class="mask">
+		<div class="h-header">
+			<div id="logo-S">
+				
+					<a href="/">
+						<img src="/img/logo.png" alt="Logo">
+					</a>
+				
+			</div>
+			<!-- Navigation in header(id="navigation-S") -->
+			<div id="navigation-S">
+				<ul>
+					
+						<li class="menu-home">
+							<a href="/" class="menu-item-home">主页</a>
+						</li>
+					
+						<li class="menu-archive">
+							<a href="/archives" class="menu-item-archive">归档</a>
+						</li>
+					
+						<li class="menu-categories">
+							<a href="/categories" class="menu-item-categories">分类</a>
+						</li>
+					
+						<li class="menu-tags">
+							<a href="/tags" class="menu-item-tags">标签</a>
+						</li>
+					
+						<li class="menu-about">
+							<a href="/about" class="menu-item-about">关于</a>
+						</li>
+					
+						<li class="menu-gallery">
+							<a href="/gallery" class="menu-item-gallery">相册</a>
+						</li>
+					
+
+					
+				</ul>			
+			</div>				
+		</div>
+
+		<div class="h-body">	
+			<!-- motto -->
+			
+				<div id="page-motto">
+					<p class="motto">
+						
+					</p>
+				</div>
+			
+
+			<div id="navigation-H">
+				<!-- Page title -->
+				<p>
+					
+						当前文章&nbsp;:&nbsp;《django》
+					
+				</p>
+				<!-- Progress bar -->
+				<div id="progress-bar"></div>
+
+				<!-- Progress percent -->
+				<div id="progress-percentage">
+					<h1>0.0%</h1>
+				</div>
+			</div>
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<ul>
+				<!-- <li>
+					<a><i class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>切换背景</a>
+				</li> -->
+				<li>
+					<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down"></i>继续阅读</a>
+				</li>
+				<!-- <li>
+					<a href="https://github.com/Sariay/hexo-theme-Annie" target="_blank"><i class="fa fa-download"></i>克隆主题</a>
+				</li> -->
+			</ul>
+		</div>
+		
+		<!-- This is only a demo, please go to "https://time.is" to set your city time! -->
+<style type="text/css">
+	.header-date {
+		position: absolute;
+		left: 40px;
+		bottom: 30px;
+		writing-mode: tb-rl;
+		font-size: 36px;
+	}	
+	.header-date a {
+		border-bottom: none;
+	}
+	@media only screen and (max-width: 768 ) {
+		.header-date {
+			position: absolute;
+			left: 40px;
+			bottom: 30px;
+			writing-mode: tb-rl;
+			font-size: 20px;
+		}			
+	}
+</style>
+<div class="header-date">
+	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow"></a>
+	<span id="Beijing_z43d"></span>
+</div>
+<!-- <script src="//widget.time.is/zh.js"></script> -->
+<script src="../../../js/zh.js"></script>
+<script>
+	time_is_widget.init({
+		Beijing_z43d:{
+			template:"DATE", 
+			date_format:"year年 monthname dnum日"
+		}
+	});
+</script>
+</div></header>
+
+<!-- Navigation in div(id="navigation-H") -->
+<a class="nav-trigger">
+	<span></span>
+</a>
+
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+			
+				<li class="menu-home">
+					<a href="/" class="menu-item-home">主页</a>
+				</li>
+			
+				<li class="menu-archive">
+					<a href="/archives" class="menu-item-archive">归档</a>
+				</li>
+			
+				<li class="menu-categories">
+					<a href="/categories" class="menu-item-categories">分类</a>
+				</li>
+			
+				<li class="menu-tags">
+					<a href="/tags" class="menu-item-tags">标签</a>
+				</li>
+			
+				<li class="menu-about">
+					<a href="/about" class="menu-item-about">关于</a>
+				</li>
+			
+				<li class="menu-gallery">
+					<a href="/gallery" class="menu-item-gallery">相册</a>
+				</li>
+			
+
+			
+		</ul>
+	</div>
+
+	<div class="nav-footer">
+		<ul>
+	
+		
+			<li>
+				<a href="http://github.com/" title="Github" target="_blank">
+					<i class="fa fa-github"></i>
+				</a>
+			</li>
+		
+		
+			<li>
+				<a href="http://github.com/" title="Weibo" target="_blank">
+					<i class="fa fa-weibo"></i>
+				</a>
+			</li>
+		
+		
+			<li>
+				<a href="mailto:http://github.com/" title="Email" target="_blank">
+					<i class="fa fa-envelope-o"></i>
+				</a>
+			</li>
+		
+
+		
+			<li>
+				<a href="http://github.com/" title="QQ" target="_blank">
+					<i class="fa fa-qq"></i>
+				</a>
+			</li>
+		
+		
+			<li>
+				<a href="http://github.com/" title="Twitter" target="_blank">
+					<i class="fa fa-twitter"></i>
+				</a>
+			</li>
+		
+	 
+</ul>
+	</div>
+</nav>
+
+		
+		<!--main-->
+		<main>
+			<div class="layout-post">
+	
+	
+	<div class="article-title">
+		
+	<a href="/2019/01/09/django/" itemprop="url">
+		django
+	</a>
+
+	</div>
+
+	<div class="article-meta">
+		<span>
+			
+	发布于
+	<a href="/2019/01/09/django/" itemprop="url">
+		<time datetime="2019-01-09T06:01:27.000Z" itemprop="datePublished">
+	  		2019-01-09
+	  </time>
+	</a> 
+
+	/
+	更新于
+	<a href="/2019/01/09/django/" itemprop="url">
+		<time datetime="2019-01-09T06:01:27.000Z" itemprop="dateUpdated">
+	  		2019-02-28
+	  </time>
+	</a> 	
+
+		</span>
+		/
+		<span>
+			<i class="fa fa-tags"></i>
+			
+	
+		<a href="/tags/python/" class=" ">
+			python
+		</a>
+	
+		
+		</span>
+		/
+		
+
+    <span class="leancloud_visitors" id="/2019/01/09/django/_visitors" data-url="/2019/01/09/django/" data-title="django">
+        热度
+        <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
+    </span>
+    
+    /
+
+
+
+    <span class="leancloud_likes" id="/2019/01/09/django/_likes" data-url="/2019/01/09/django/" data-title="django" rel="unlike">
+        喜欢
+        <i class="fa fa-heart"></i>
+        <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
+    </span>
+
+	</div>
+
+	<div class="article-content" id="article-content">
+		<h1 id="企业级开发框架-Django"><a href="#企业级开发框架-Django" class="headerlink" title="企业级开发框架-Django"></a>企业级开发框架-Django</h1><h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><blockquote>
+<p>在开发Python应用程序的时候，系统安装的Python3只有一个版本：3.4。所有第三方的包都会被<code>pip</code>安装到Python3的<code>site-packages</code>目录下。</p>
+<p>如果我们要同时开发多个应用程序，那这些应用程序都会共用一个Python，就是安装在系统的Python 3。如果应用A需要jinja 2.7，而应用B需要jinja 2.6怎么办？</p>
+<p>这种情况下，每个应用可能需要各自拥有一套“独立”的Python运行环境。virtualenv就是用来为一个应用创建一套“隔离”的Python运行环境.</p>
+</blockquote>
+<ul>
+<li><p>安装<code>virtualenv</code></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> pip <span class="token function">install</span> virtualenv virtualenvwrapper
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>更改<code>.zshrc</code></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">export</span> WORKON_HOME<span class="token operator">=</span>/home/mustard/.virtualenvs
+<span class="token function">export</span> PROJECT_HOME<span class="token operator">=</span>/home/mustard/workspace
+<span class="token function">export</span> VIRTUALENVWRAPPER_PYTHON<span class="token operator">=</span>/usr/bin/python
+<span class="token function">source</span> /usr/local/bin/virtualenvwrapper.sh
+<span class="token comment" spellcheck="true"># 使更改生效</span>
+<span class="token function">source</span> .zshrc
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>创建一个新的项目</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 创建项目目录</span>
+<span class="token function">mkdir</span> myproject
+<span class="token function">cd</span> myproject/
+<span class="token comment" spellcheck="true"># 创建一个独立的Python运行环境，命名为venv</span>
+virtualenv --no-site-packages venv
+<span class="token comment" spellcheck="true"># virtualenv命令是创建一个独立的Python运行环境</span>
+<span class="token comment" spellcheck="true"># --no-site-packages参数是创建一个干净的不包含第三方包的Python运行环境</span>
+
+<span class="token comment" spellcheck="true">#进入venv环境</span>
+<span class="token function">source</span> venv/bin/activate
+<span class="token comment" spellcheck="true"># 此时可以使用pip install等命令了</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h2 id="Django"><a href="#Django" class="headerlink" title="Django"></a>Django</h2><ul>
+<li><p>安装<code>bpython</code>，添加自动补全功能</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 进入venv环境后</span>
+<span class="token comment" spellcheck="true"># 1.升级pip</span>
+pip install <span class="token operator">-</span><span class="token operator">-</span>upgrade pip
+<span class="token comment" spellcheck="true"># 2.安装Django</span>
+pip install Django
+<span class="token comment" spellcheck="true"># 3.安装bpython</span>
+pip install bpython
+<span class="token comment" spellcheck="true"># 进入bpython，查询django版本</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> django
+<span class="token operator">>></span><span class="token operator">></span> django<span class="token punctuation">.</span>VERSION
+<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token string">'final'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h3 id="Django基本命令"><a href="#Django基本命令" class="headerlink" title="Django基本命令"></a><code>Django</code>基本命令</h3><ul>
+<li><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 创建新项目 mysite</span>
+django-admin startproject mysite
+<span class="token comment" spellcheck="true"># 创建新应用（app），learn</span>
+python manage.py startapp learn
+<span class="token comment" spellcheck="true"># 将新定义的app加到settings.py中的INSTALL_APPS中</span>
+<span class="token comment" spellcheck="true"># 修改mysite/mysite/settings.py</span>
+INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuation">(</span>
+    <span class="token string">'django.contrib.admin'</span>,
+    <span class="token string">'django.contrib.auth'</span>,
+    <span class="token string">'django.contrib.contenttypes'</span>,
+    <span class="token string">'django.contrib.sessions'</span>,
+    <span class="token string">'django.contrib.messages'</span>,
+    <span class="token string">'django.contrib.staticfiles'</span>,
+
+    <span class="token string">'learn'</span>,
+<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 新建的 app 如果不加到 INSTALL_APPS 中的话, django 就不能自动找到app中的模板文件(app-name/templates/下的文件)和静态文件(app-name/static/中的文件)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><code>requirements.txt</code></p>
+<blockquote>
+<p>python项目中必须包含一个 requirements.txt 文件，用于记录所有依赖包及其精确的版本号。以便新环境部署。</p>
+</blockquote>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 生成requirements.txt</span>
+pip3 freeze <span class="token operator">></span>requirements.txt
+<span class="token comment" spellcheck="true"># 部署环境</span>
+pip3 <span class="token function">install</span> -r requirements.txt
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h2 id="使用Django-Rest-framework框架"><a href="#使用Django-Rest-framework框架" class="headerlink" title="使用Django Rest framework框架"></a>使用Django Rest framework框架</h2><h3 id="基础设置"><a href="#基础设置" class="headerlink" title="基础设置"></a>基础设置</h3><ul>
+<li>下载框架</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">pip3 <span class="token function">install</span> djangorestframework
+pip3 <span class="token function">install</span> pygments
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li><p>基础配置</p>
+<ul>
+<li>将app添加至项目中</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 将'vm.apps.VmConfig'添加到kvm/settings.py中</span>
+INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token string">'vm.apps.VmConfig'</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>修改项目的url</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 打开kvm/urls.py,将以下语句添加进去</span>
+<span class="token comment" spellcheck="true"># 提示：vm/urls.py需要自行创建</span>
+<span class="token keyword">from</span> django<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>urls <span class="token keyword">import</span> url <span class="token punctuation">,</span> include
+urlpatterns <span class="token operator">=</span> <span class="token punctuation">[</span>
+    path<span class="token punctuation">(</span><span class="token string">'admin/'</span><span class="token punctuation">,</span> admin<span class="token punctuation">.</span>site<span class="token punctuation">.</span>urls<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    url<span class="token punctuation">(</span>r<span class="token string">'^'</span><span class="token punctuation">,</span>include<span class="token punctuation">(</span><span class="token string">'vm.urls'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>创建<code>vm/urls.py</code></li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># url是预先设计好的</span>
+<span class="token keyword">from</span> django<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>urls <span class="token keyword">import</span> url
+<span class="token keyword">from</span> vm <span class="token keyword">import</span> views
+<span class="token keyword">from</span> rest_framework<span class="token punctuation">.</span>urlpatterns <span class="token keyword">import</span> format_suffix_patterns
+urlpatterns <span class="token operator">=</span> <span class="token punctuation">[</span>
+    url<span class="token punctuation">(</span>r<span class="token string">'^v1/vps/$'</span><span class="token punctuation">,</span>views<span class="token punctuation">.</span>kvm_list<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    url<span class="token punctuation">(</span>r<span class="token string">'^v1/vps/kvmname/(?P&lt;name>[a-zA-Z0-9]+)/$'</span><span class="token punctuation">,</span>views<span class="token punctuation">.</span>kvm<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+urlpatterns <span class="token operator">=</span> format_suffix_patterns<span class="token punctuation">(</span>urlpatterns<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h3 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h3><ul>
+<li>配置数据库文件</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 修改django项目的setting.py文件</span>
+DATABASES <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'default'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+       <span class="token comment" spellcheck="true"># 'ENGINE': 'django.db.backends.sqlite3',</span>
+       <span class="token comment" spellcheck="true"># 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),</span>
+        <span class="token string">'ENGINE'</span><span class="token punctuation">:</span> <span class="token string">'django.db.backends.mysql'</span><span class="token punctuation">,</span>
+        <span class="token string">'NAME'</span><span class="token punctuation">:</span> <span class="token string">'s3test'</span><span class="token punctuation">,</span>
+        <span class="token string">'USER'</span><span class="token punctuation">:</span><span class="token string">'root'</span><span class="token punctuation">,</span>
+        <span class="token string">'PASSWORD'</span><span class="token punctuation">:</span><span class="token string">'root'</span><span class="token punctuation">,</span>
+        <span class="token string">'HOST'</span><span class="token punctuation">:</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span>
+        <span class="token string">'PORT'</span><span class="token punctuation">:</span><span class="token string">'3306'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>编写模型类</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 编写项目app的models.py 文件,如</span>
+<span class="token keyword">from</span> django<span class="token punctuation">.</span>db <span class="token keyword">import</span> models
+
+<span class="token comment" spellcheck="true"># Create your models here.</span>
+<span class="token keyword">class</span> <span class="token class-name">buckets</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    id <span class="token operator">=</span> models<span class="token punctuation">.</span>AutoField<span class="token punctuation">(</span>primary_key <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+    bucket_name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length <span class="token operator">=</span> <span class="token number">32</span><span class="token punctuation">)</span>
+    create_id <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length <span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">)</span>
+    create_at <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span>auto_now_add<span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+    objects <span class="token operator">=</span> models<span class="token punctuation">.</span>Manager<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token keyword">class</span> <span class="token class-name">users</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 参数中包含max_length为可变长度（varchar类型），没有参数的为定长（char类型）</span>
+    id <span class="token operator">=</span> models<span class="token punctuation">.</span>AutoField<span class="token punctuation">(</span>primary_key <span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+    access_key <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length <span class="token operator">=</span> <span class="token number">64</span><span class="token punctuation">)</span>
+    access_secret <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length <span class="token operator">=</span> <span class="token number">64</span><span class="token punctuation">)</span>
+    create_id <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length <span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 如果在数据中已有数据的基础上需要更改数据库设计，需要先清空表中数据，并为新增字段添加默认值</span>
+    server_address <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length <span class="token operator">=</span> <span class="token number">64</span><span class="token punctuation">,</span>default<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># auto_now 自动创建---无论添加或修改，都是当前操作的时间 ,auto_now_add 自动创建---永远是创建时的时间</span>
+    create_at <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span>auto_now_add<span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># null=True数据库中的字段允许为空，但是django会自动检测数据不允许为空值，需要添加blank=True才可以</span>
+    update_at <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span>auto_now<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>blank<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    objects <span class="token operator">=</span> models<span class="token punctuation">.</span>Manager<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>将新建的<code>models</code>同步至数据库</li>
+</ul>
+<pre class="line-numbers language-cmd"><code class="language-cmd"># 查询当前数据库与本地的models之间的差异,生成合并代码
+python manage.py makemigrations
+# 将何必代码导入数据库
+python manage.py migrate
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="数据库的基本操作-views-py"><a href="#数据库的基本操作-views-py" class="headerlink" title="数据库的基本操作(views.py)"></a>数据库的基本操作(<code>views.py</code>)</h3><ul>
+<li>增</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> s3<span class="token punctuation">.</span>models <span class="token keyword">import</span> buckets<span class="token punctuation">,</span>users<span class="token punctuation">,</span>shares
+bucket <span class="token operator">=</span> buckets<span class="token punctuation">(</span>bucket_name <span class="token operator">=</span><span class="token string">'mytest'</span><span class="token punctuation">,</span>create_id<span class="token operator">=</span><span class="token string">'17721803'</span><span class="token punctuation">)</span>
+bucket<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>查</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> s3<span class="token punctuation">.</span>models <span class="token keyword">import</span> buckets<span class="token punctuation">,</span>users<span class="token punctuation">,</span>shares
+<span class="token comment" spellcheck="true"># 获取表中所有数据</span>
+bucket <span class="token operator">=</span> buckets<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>all<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 获得表中所有数据的values</span>
+bucket <span class="token operator">=</span> buckets<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>all<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">,</span><span class="token string">'bucket_name'</span><span class="token punctuation">)</span>
+bucket1 <span class="token operator">=</span> buckets<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>filter<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">,</span><span class="token string">'bucket_name'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 使用values进行查询数据时将返回一个QuerySet对象，如&lt;QuerySet [{'bucket_name': 'wxmust', 'id': 3}, {'bucket_name': 'mytest', 'id': 9}]></span>
+<span class="token comment" spellcheck="true"># 形式为[{}]，列表中包含字典的形式</span>
+bucket1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true"># 获得单条数据</span>
+bucket <span class="token operator">=</span> buckets<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>id <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span>
+bucket <span class="token operator">=</span> buckets<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>id <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>删</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> s3<span class="token punctuation">.</span>models <span class="token keyword">import</span> buckets<span class="token punctuation">,</span>users<span class="token punctuation">,</span>shares
+<span class="token comment" spellcheck="true"># 删除单条数据</span>
+buckets<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>delete<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 删除多条符合条件的数据</span>
+buckets<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>delete<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 删除所有数据</span>
+buckets<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>all<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>delete<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>改</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> s3<span class="token punctuation">.</span>models <span class="token keyword">import</span> buckets<span class="token punctuation">,</span>users<span class="token punctuation">,</span>shares
+<span class="token comment" spellcheck="true"># 1: 获得单条数据信息</span>
+<span class="token comment" spellcheck="true"># 2: 修改数据信息</span>
+<span class="token comment" spellcheck="true"># 3: save()</span>
+user <span class="token operator">=</span> users<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>create_id<span class="token operator">=</span><span class="token string">'17721803'</span><span class="token punctuation">)</span>
+user<span class="token punctuation">.</span>access_key <span class="token operator">=</span> <span class="token string">'wxmust'</span>
+user<span class="token punctuation">.</span>access_secret <span class="token operator">=</span> <span class="token string">'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY'</span>
+user<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="响应头Response"><a href="#响应头Response" class="headerlink" title="响应头Response"></a>响应头Response</h3><h4 id="返回状态码"><a href="#返回状态码" class="headerlink" title="返回状态码"></a>返回状态码</h4><ul>
+<li>使用方法：</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"> <span class="token keyword">return</span> Response<span class="token punctuation">(</span>status<span class="token operator">=</span>status<span class="token punctuation">.</span>HTTP_204_NO_CONTENT<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>状态码列表：</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python">HTTP_100_CONTINUE <span class="token operator">=</span> <span class="token number">100</span>
+HTTP_101_SWITCHING_PROTOCOLS <span class="token operator">=</span> <span class="token number">101</span>
+HTTP_200_OK <span class="token operator">=</span> <span class="token number">200</span>
+HTTP_201_CREATED <span class="token operator">=</span> <span class="token number">201</span>
+HTTP_202_ACCEPTED <span class="token operator">=</span> <span class="token number">202</span>
+HTTP_203_NON_AUTHORITATIVE_INFORMATION <span class="token operator">=</span> <span class="token number">203</span>
+HTTP_204_NO_CONTENT <span class="token operator">=</span> <span class="token number">204</span>
+HTTP_205_RESET_CONTENT <span class="token operator">=</span> <span class="token number">205</span>
+HTTP_206_PARTIAL_CONTENT <span class="token operator">=</span> <span class="token number">206</span>
+HTTP_207_MULTI_STATUS <span class="token operator">=</span> <span class="token number">207</span>
+HTTP_300_MULTIPLE_CHOICES <span class="token operator">=</span> <span class="token number">300</span>
+HTTP_301_MOVED_PERMANENTLY <span class="token operator">=</span> <span class="token number">301</span>
+HTTP_302_FOUND <span class="token operator">=</span> <span class="token number">302</span>
+HTTP_303_SEE_OTHER <span class="token operator">=</span> <span class="token number">303</span>
+HTTP_304_NOT_MODIFIED <span class="token operator">=</span> <span class="token number">304</span>
+HTTP_305_USE_PROXY <span class="token operator">=</span> <span class="token number">305</span>
+HTTP_306_RESERVED <span class="token operator">=</span> <span class="token number">306</span>
+HTTP_307_TEMPORARY_REDIRECT <span class="token operator">=</span> <span class="token number">307</span>
+HTTP_400_BAD_REQUEST <span class="token operator">=</span> <span class="token number">400</span>
+HTTP_401_UNAUTHORIZED <span class="token operator">=</span> <span class="token number">401</span>
+HTTP_402_PAYMENT_REQUIRED <span class="token operator">=</span> <span class="token number">402</span>
+HTTP_403_FORBIDDEN <span class="token operator">=</span> <span class="token number">403</span>
+HTTP_404_NOT_FOUND <span class="token operator">=</span> <span class="token number">404</span>
+HTTP_405_METHOD_NOT_ALLOWED <span class="token operator">=</span> <span class="token number">405</span>
+HTTP_406_NOT_ACCEPTABLE <span class="token operator">=</span> <span class="token number">406</span>
+HTTP_407_PROXY_AUTHENTICATION_REQUIRED <span class="token operator">=</span> <span class="token number">407</span>
+HTTP_408_REQUEST_TIMEOUT <span class="token operator">=</span> <span class="token number">408</span>
+HTTP_409_CONFLICT <span class="token operator">=</span> <span class="token number">409</span>
+HTTP_410_GONE <span class="token operator">=</span> <span class="token number">410</span>
+HTTP_411_LENGTH_REQUIRED <span class="token operator">=</span> <span class="token number">411</span>
+HTTP_412_PRECONDITION_FAILED <span class="token operator">=</span> <span class="token number">412</span>
+HTTP_413_REQUEST_ENTITY_TOO_LARGE <span class="token operator">=</span> <span class="token number">413</span>
+HTTP_414_REQUEST_URI_TOO_LONG <span class="token operator">=</span> <span class="token number">414</span>
+HTTP_415_UNSUPPORTED_MEDIA_TYPE <span class="token operator">=</span> <span class="token number">415</span>
+HTTP_416_REQUESTED_RANGE_NOT_SATISFIABLE <span class="token operator">=</span> <span class="token number">416</span>
+HTTP_417_EXPECTATION_FAILED <span class="token operator">=</span> <span class="token number">417</span>
+HTTP_422_UNPROCESSABLE_ENTITY <span class="token operator">=</span> <span class="token number">422</span>
+HTTP_423_LOCKED <span class="token operator">=</span> <span class="token number">423</span>
+HTTP_424_FAILED_DEPENDENCY <span class="token operator">=</span> <span class="token number">424</span>
+HTTP_428_PRECONDITION_REQUIRED <span class="token operator">=</span> <span class="token number">428</span>
+HTTP_429_TOO_MANY_REQUESTS <span class="token operator">=</span> <span class="token number">429</span>
+HTTP_431_REQUEST_HEADER_FIELDS_TOO_LARGE <span class="token operator">=</span> <span class="token number">431</span>
+HTTP_451_UNAVAILABLE_FOR_LEGAL_REASONS <span class="token operator">=</span> <span class="token number">451</span>
+HTTP_500_INTERNAL_SERVER_ERROR <span class="token operator">=</span> <span class="token number">500</span>
+HTTP_501_NOT_IMPLEMENTED <span class="token operator">=</span> <span class="token number">501</span>
+HTTP_502_BAD_GATEWAY <span class="token operator">=</span> <span class="token number">502</span>
+HTTP_503_SERVICE_UNAVAILABLE <span class="token operator">=</span> <span class="token number">503</span>
+HTTP_504_GATEWAY_TIMEOUT <span class="token operator">=</span> <span class="token number">504</span>
+HTTP_505_HTTP_VERSION_NOT_SUPPORTED <span class="token operator">=</span> <span class="token number">505</span>
+HTTP_507_INSUFFICIENT_STORAGE <span class="token operator">=</span> <span class="token number">507</span>
+HTTP_511_NETWORK_AUTHENTICATION_REQUIRED <span class="token operator">=</span> <span class="token number">511</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="自定义Response响应头"><a href="#自定义Response响应头" class="headerlink" title="自定义Response响应头"></a>自定义Response响应头</h4><blockquote>
+<p>参考资料： <a href="http://www.django-rest-framework.org/api-guide/responses/#creating-responses" target="_blank" rel="noopener">http://www.django-rest-framework.org/api-guide/responses/#creating-responses</a></p>
+</blockquote>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># views.py 文件中进行自定义Response</span>
+    response <span class="token operator">=</span> Response<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># response = Response(status = status.HTTP_200_OK)</span>
+    response<span class="token punctuation">[</span><span class="token string">'server'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'SHU'</span>
+    response1<span class="token punctuation">[</span><span class="token string">'content_type'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'application/octet-stream'</span>
+<span class="token keyword">return</span> response
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="字典排序"><a href="#字典排序" class="headerlink" title="字典排序"></a>字典排序</h3><ul>
+<li>按照字典中的<code>Key</code>排序</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python">sorted<span class="token punctuation">(</span>dict<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># key升序排列</span>
+sorted<span class="token punctuation">(</span>dict<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>reverse<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># key降序排列</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+	
+	</div>
+	
+	<div id="current-post-cover" data-scr="https://s2.ax1x.com/2019/01/08/FqTlG9.jpg"></div>
+
+	<!-- relate post, comment...-->
+	<div class="investment-container">
+		<div class="investment-header">
+			<div class="investment-title-1">
+				<div class="on">相关文章</div>
+				<div>评论</div>
+			</div>
+			<div class="investment-title-2">	            
+				
+	<span>
+		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+		
+			<a href="/2019/02/28/zerotier/" title="zerotier" rel="prev">
+				&laquo;上一篇
+			</a>
+		
+		
+			<a href="/2019/01/08/hello-world/" title="Hello World" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+      		
+			</div>	
+		</div>
+		
+		<div class="investment-content">
+			<div class="investment-content-list">
+				
+
+<div class="relate-post">
+	<ul>
+		
+				<li>
+					<div>
+						<a href="/2019/02/28/zerotier/" title="zerotier">
+							zerotier
+						</a>
+						<p>
+							ZeroTier 内网穿透ZeroTier官网
+
+所有需要进行内网穿透的机器必须都安装软件、app，通过添加Zerotier用户的Networks ID加入到同一个组中，组中的所有机器可以互相连接使用
+
+ZeroTier 用户
+登录官...
+						</p>
+					</div>
+
+					<a href="/2019/02/28/zerotier/" title="zerotier">				
+						<img src="https://s2.ax1x.com/2019/01/08/FqTlG9.jpg" class="relateImg" alt="zerotier">
+					</a>
+				</li>											
+		
+		
+				<li>
+					<div>
+						<a href="/2019/01/08/ldap/" title="ldap">
+							ldap
+						</a>
+						<p>
+							LDAP安装# 安装开发环境
+sudo apt-get install libsasl2-dev python-dev libldap2-dev libssl-dev
+# 官方文档提供的安装方式，安装在mac的系统python中，/u...
+						</p>
+					</div>
+
+					<a href="/2019/01/08/ldap/" title="ldap">				
+						<img src="/img/cart_cover.jpg" class="relateImg" alt="ldap">
+					</a>
+				</li>											
+		
+		
+				<li>
+					<div>
+						<a href="/2019/01/08/vps/" title="vps + shadowsocks 优雅看世界">
+							vps + shadowsocks 优雅看世界
+						</a>
+						<p>
+							vps + shadowsocks 优雅看世界vpsvps 提供商
+digitalocean
+# Ubuntu
+ssh root@vpsip
+apt-get -y install python-gevent python-pip
+pi...
+						</p>
+					</div>
+
+					<a href="/2019/01/08/vps/" title="vps + shadowsocks 优雅看世界">				
+						<img src="https://s2.ax1x.com/2019/01/08/FqTlG9.jpg" class="relateImg" alt="vps + shadowsocks 优雅看世界">
+					</a>
+				</li>											
+		
+		
+				<li>
+					<div>
+						<a href="/2019/01/08/hello-world/" title="Hello World">
+							Hello World
+						</a>
+						<p>
+							Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using ...
+						</p>
+					</div>
+
+					<a href="/2019/01/08/hello-world/" title="Hello World">				
+						<img src="/img/cart_cover.jpg" class="relateImg" alt="Hello World">
+					</a>
+				</li>											
+		
+		
+	</ul>
+</div>	
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-comment">
+
+	
+
+		
+
+			<!-- I don't know 【表情】-->
+			
+		
+		
+	
+
+</div>
+			</div>
+		</div>	
+	</div>
+</div>
+
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+
+	<script>
+		var appid = 'dX--',
+            appkey = 'dx--';	  
+        AnnieLeancloud(appid, appkey);         
+	</script>
+    
+
+
+ 
+
+<!-- show math formula -->
+
+
+
+<script>
+	//Refer to https://xinyo.org/archives/66226, thanks xinyo!
+	function codeCopy() {
+		var copyContainerId = 'copy-nav';
+						
+		$("pre").before(" <nav class=' " + copyContainerId + " '><i class='code-language'></i></nav> ");
+		
+		$('.' + copyContainerId).append("<i class='fa fa-clipboard copy-btn' aria-hidden='true'></i>");
+		
+		$('#article-content').find('pre').each( function () {
+			var language = $(this).children('code').attr('class').substr(9);//why 9? Need to check language?
+			$(this).prev().find('.code-language').text( language );	
+		});
+				
+		//为复制按钮添加click事件
+		$('.copy-btn').on("click", function() {
+			//初始化
+			$("textarea").remove("#targetId");
+			
+			//获取对应的代码
+			var codePre = $(this).parent().next(),
+				codeText = codePre[0].textContent,
+				target = document.createElement("textarea");
+			target.style.position = "absolute";
+			target.style.left = "-9999px";
+			target.style.top = "0";
+			target.id = "targetId";
+			codePre.append(target);
+			target.textContent = codeText;
+
+			//选中textarea内的代码
+			target.focus();
+			target.setSelectionRange(0, target.value.length);
+
+			// 复制选中的内容
+			document.execCommand("copy");
+			
+			//删除添加的节点
+			$("textarea").remove("#targetId");
+			
+			var thisCopied = $(this);
+			thisCopied.addClass('copy-status');	
+			setTimeout( function() {
+				thisCopied.removeClass('copy-status');
+			}, 2000)
+		});	
+	}
+	
+	if( $('.layout-post').length )	{
+		codeCopy();
+	}
+</script>
+
+
+<!-- TODO: There seems to be a bug when you close the post gallery! -->
+<link rel="stylesheet" href="/plugin/lightgallery/css/lightgallery.css">
+<script src="/plugin/lightgallery/js/jquery-1.11.0.min.js"></script>
+<script src="/plugin/lightgallery/js/lightgallery-all.min.js"></script>
+
+<script type="text/javascript">
+	var postTitle = $('.article-title a').text() ? $('.article-title a').text() : "No post title!";
+	$('.article-content img').each(function() {
+		var imgPath = $(this).attr('src'),
+			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+		$(this).wrap('<div class="img-responsive" data-src="' + imgPath + '" data-responsive="' + imgPath + '" data-sub-html="<p>图片 ' + imgTitle + '</p><h4>文章' + postTitle + '</h4>"></div>');
+	});
+
+	$('.article-content').lightGallery({
+		mode: 'lg-slide',
+		selector: '.img-responsive',
+		share: false,
+		zoom: false,
+		download: false
+	});
+	//TODO：支持video
+</script>
+
+<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+		
+
+		<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+		<script src="/plugin/toc/katelog.min.js"></script>
+
+		
+	
+		</main>
+		
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		
+			<li>
+				<a href="http://github.com/" title="Github" target="_blank">
+					<i class="fa fa-github"></i>
+				</a>
+			</li>
+		
+		
+			<li>
+				<a href="http://github.com/" title="Weibo" target="_blank">
+					<i class="fa fa-weibo"></i>
+				</a>
+			</li>
+		
+		
+			<li>
+				<a href="mailto:http://github.com/" title="Email" target="_blank">
+					<i class="fa fa-envelope-o"></i>
+				</a>
+			</li>
+		
+
+		
+			<li>
+				<a href="http://github.com/" title="QQ" target="_blank">
+					<i class="fa fa-qq"></i>
+				</a>
+			</li>
+		
+		
+			<li>
+				<a href="http://github.com/" title="Twitter" target="_blank">
+					<i class="fa fa-twitter"></i>
+				</a>
+			</li>
+		
+	 
+</ul>
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2017 - 2019, content by mustard. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+		
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+
+		<span id="busuanzi_container_page_pv">
+	  		本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+		</span>
+
+	
+
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay. 					
+		</p>
+	</div>		
+</footer>
+		
+    <!-- set '1' to show motto in all pages! -->
+
+	<script src="/js/motto.js"></script>
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
+
+
+
+
+
+
+    <script src="/js/love.js"></script>
+
+
+<!--back to top-->
+
+    
+	<div id="totop">
+  		<a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a>
+	</div>
+	<div id="tobuttom">
+		<a href="javascript:;" name="TOBUTTOM" class="fa fa-arrow-down"></a>
+	</div>
+ 
+
+
+ 
+
+<script src="/js/vibrant.js"></script>
+<script src="/js/chinese.js"></script>
+<script src="/js/main.js"></script>
+	</body>
+	</html>
