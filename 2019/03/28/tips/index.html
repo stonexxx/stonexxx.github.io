@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      vps + shadowsocks 优雅看世界 | 芥末
+      tips | 芥末
     
   </title>
   <meta name="author" content="mustard">
@@ -113,7 +113,7 @@
 				<!-- Page title -->
 				<p>
 					
-						当前文章&nbsp;:&nbsp;《vps + shadowsocks 优雅看世界》
+						当前文章&nbsp;:&nbsp;《tips》
 					
 				</p>
 				<!-- Progress bar -->
@@ -273,8 +273,8 @@
 	
 	<div class="article-title">
 		
-	<a href="/2019/01/08/vps/" itemprop="url">
-		vps + shadowsocks 优雅看世界
+	<a href="/2019/03/28/tips/" itemprop="url">
+		tips
 	</a>
 
 	</div>
@@ -283,16 +283,16 @@
 		<span>
 			
 	发布于
-	<a href="/2019/01/08/vps/" itemprop="url">
-		<time datetime="2019-01-08T08:43:15.000Z" itemprop="datePublished">
-	  		2019-01-08
+	<a href="/2019/03/28/tips/" itemprop="url">
+		<time datetime="2019-03-28T08:15:35.000Z" itemprop="datePublished">
+	  		2019-03-28
 	  </time>
 	</a> 
 
 	/
 	更新于
-	<a href="/2019/01/08/vps/" itemprop="url">
-		<time datetime="2019-01-08T08:43:15.000Z" itemprop="dateUpdated">
+	<a href="/2019/03/28/tips/" itemprop="url">
+		<time datetime="2019-03-28T08:15:35.000Z" itemprop="dateUpdated">
 	  		2019-03-28
 	  </time>
 	</a> 	
@@ -303,8 +303,8 @@
 			<i class="fa fa-tags"></i>
 			
 	
-		<a href="/tags/vps/" class=" ">
-			vps
+		<a href="/tags/shell/" class=" ">
+			shell
 		</a>
 	
 		
@@ -312,7 +312,7 @@
 		/
 		
 
-    <span class="leancloud_visitors" id="/2019/01/08/vps/_visitors" data-url="/2019/01/08/vps/" data-title="vps + shadowsocks 优雅看世界">
+    <span class="leancloud_visitors" id="/2019/03/28/tips/_visitors" data-url="/2019/03/28/tips/" data-title="tips">
         热度
         <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
     </span>
@@ -321,7 +321,7 @@
 
 
 
-    <span class="leancloud_likes" id="/2019/01/08/vps/_likes" data-url="/2019/01/08/vps/" data-title="vps + shadowsocks 优雅看世界" rel="unlike">
+    <span class="leancloud_likes" id="/2019/03/28/tips/_likes" data-url="/2019/03/28/tips/" data-title="tips" rel="unlike">
         喜欢
         <i class="fa fa-heart"></i>
         <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
@@ -330,59 +330,13 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<h1 id="vps-shadowsocks-优雅看世界"><a href="#vps-shadowsocks-优雅看世界" class="headerlink" title="vps + shadowsocks 优雅看世界"></a>vps + shadowsocks 优雅看世界</h1><h2 id="vps"><a href="#vps" class="headerlink" title="vps"></a>vps</h2><p>vps 提供商</p>
-<p><a href="https://cloud.digitalocean.com/account/billing?i=49f6a3" target="_blank" rel="noopener">digitalocean</a><br><img src="https://s1.ax1x.com/2018/12/18/FB8TO0.png" alt="vps-ss"></p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># Ubuntu</span>
-<span class="token function">ssh</span> root@vpsip
-<span class="token function">apt-get</span> -y <span class="token function">install</span> python-gevent python-pip
-pip <span class="token function">install</span> shadowsocks
-<span class="token comment" spellcheck="true"># Centos</span>
-yum <span class="token function">install</span> epel-release
-yum update
-yum <span class="token function">install</span> python-setuptools m2crypto supervisor
-easy_install pip
-pip <span class="token function">install</span> shadowsocks
-<span class="token comment" spellcheck="true"># set config</span>
-vim /etc/shadowsocks/config.json
-<span class="token punctuation">{</span>
-<span class="token string">"server"</span><span class="token keyword">:</span><span class="token string">"138.197.200.174"</span>,
-<span class="token string">"server_port"</span>:8388,
-<span class="token string">"local_address"</span><span class="token keyword">:</span><span class="token string">"127.0.0.1"</span>,
-<span class="token string">"local_port"</span>:1080,
-<span class="token string">"password"</span><span class="token keyword">:</span><span class="token string">"mustard"</span>,
-<span class="token string">"timeout"</span>:300,
-<span class="token string">"method"</span><span class="token keyword">:</span><span class="token string">"aes-256-cfb"</span>,
-<span class="token string">"fast_open"</span>:true
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true"># 后台启动服务</span>
-ssserver -c /etc/shadowsocks/config.json -d start
-<span class="token comment" spellcheck="true"># 后台关闭服务</span>
-ssserver -c /etc/shadowsocks/config.json stop
-<span class="token comment" spellcheck="true"># 查看日志信息</span>
-<span class="token function">cat</span> /var/log/shadowsocks.log 
-<span class="token comment" spellcheck="true"># 2018-12-10 05:25:36 INFO     starting server at 138.197.200.174:8388</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><h2 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h2><ul>
-<li>x 版不太好用，推荐NG版本<br><a href="https://sourceforge.net/projects/shadowsocksgui/" target="_blank" rel="noopener">下载shadowdocks客户端</a></li>
-</ul>
-<h3 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h3><h4 id="通过apt-安装"><a href="#通过apt-安装" class="headerlink" title="通过apt 安装"></a>通过apt 安装</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> add-apt-repository ppa:hzwhuang/ss-qt5
-<span class="token function">sudo</span> <span class="token function">apt-get</span> update
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> shadowsocks-qt5
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h4 id="通过github安装"><a href="#通过github安装" class="headerlink" title="通过github安装"></a>通过github安装</h4><p><a href="https://github.com/shadowsocks/shadowsocks-qt5/releases" target="_blank" rel="noopener">github 地址</a></p>
-<blockquote>
-<p>下载.appImage<br> chmod a+x Shadowsocks-Qt5-3.0.0-x86_64.AppImage<br> nohup ./Shadowsocks-Qt5-3.0.0-x86_64.AppImage &amp; (后台执行)</p>
-</blockquote>
-<h4 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h4><blockquote>
-<p>连接后无法使用google访问外网，原因是google默认使用系统连接，需要设置代理</p>
-<ul>
-<li>google可以使用插件SwitchyOmega</li>
-<li>proxy: sock5 127.0.0.1 1080</li>
-<li>auto switch : 删除第一行直接连接</li>
-<li>规则列表：<a href="https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</a></li>
-<li>保存 </li>
-</ul>
-</blockquote>
+		<h1 id="Ubuntu-获得系统参数"><a href="#Ubuntu-获得系统参数" class="headerlink" title="Ubuntu 获得系统参数"></a>Ubuntu 获得系统参数</h1><h2 id="shell命令"><a href="#shell命令" class="headerlink" title="shell命令"></a>shell命令</h2><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> apt <span class="token function">install</span> screenfetch
+screenfetch
+<span class="token comment" spellcheck="true"># 查看网络带宽</span>
+<span class="token function">sudo</span> <span class="token function">ethtool</span> eno1<span class="token punctuation">(</span>网卡名称<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 查看内存信息</span>
+<span class="token function">sudo</span> dmidecode --type memory
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 	
 	</div>
 	
@@ -400,10 +354,10 @@ ssserver -c /etc/shadowsocks/config.json stop
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/2019/01/08/ldap/" title="ldap" rel="prev">
-				&laquo;上一篇
-			</a>
 		
+			<a href="/2019/02/28/zerotier/" title="zerotier" rel="next">
+				下一篇&raquo;
+			</a>
 			
 	</span>
       		
@@ -416,27 +370,6 @@ ssserver -c /etc/shadowsocks/config.json stop
 
 <div class="relate-post">
 	<ul>
-		
-				<li>
-					<div>
-						<a href="/2019/03/28/tips/" title="tips">
-							tips
-						</a>
-						<p>
-							Ubuntu 获得系统参数shell命令sudo apt install screenfetch
-screenfetch
-# 查看网络带宽
-sudo ethtool eno1(网卡名称)
-# 查看内存信息
-sudo dmidecode...
-						</p>
-					</div>
-
-					<a href="/2019/03/28/tips/" title="tips">				
-						<img src="https://s2.ax1x.com/2019/01/08/FqTlG9.jpg" class="relateImg" alt="tips">
-					</a>
-				</li>											
-		
 		
 				<li>
 					<div>
@@ -491,6 +424,27 @@ sudo apt-get install libsasl2-dev python-dev libldap2-dev libssl-dev
 
 					<a href="/2019/01/08/ldap/" title="ldap">				
 						<img src="/img/cart_cover.jpg" class="relateImg" alt="ldap">
+					</a>
+				</li>											
+		
+		
+				<li>
+					<div>
+						<a href="/2019/01/08/vps/" title="vps + shadowsocks 优雅看世界">
+							vps + shadowsocks 优雅看世界
+						</a>
+						<p>
+							vps + shadowsocks 优雅看世界vpsvps 提供商
+digitalocean
+# Ubuntu
+ssh root@vpsip
+apt-get -y install python-gevent python-pip
+pi...
+						</p>
+					</div>
+
+					<a href="/2019/01/08/vps/" title="vps + shadowsocks 优雅看世界">				
+						<img src="https://s2.ax1x.com/2019/01/08/FqTlG9.jpg" class="relateImg" alt="vps + shadowsocks 优雅看世界">
 					</a>
 				</li>											
 		
