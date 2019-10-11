@@ -8,7 +8,7 @@
 	<html class="scrollbar">
 		
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 	<meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
@@ -18,8 +18,8 @@
     
   </title>
   <meta name="author" content="mustard">
-  <meta name="keywords" content="">
-  <meta name="description" content="">
+  <meta name="keywords" content>
+  <meta name="description" content>
 	<!-- favicon -->
   <link rel="shortcut icon" href="/img/favicon.ico">
 
@@ -164,7 +164,7 @@
 	}
 </style>
 <div class="header-date">
-	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow"></a>
+	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow" ></a>
 	<span id="Beijing_z43d"></span>
 </div>
 <!-- <script src="//widget.time.is/zh.js"></script> -->
@@ -177,7 +177,7 @@
 		}
 	});
 </script>
-</div></header>
+</header>
 
 <!-- Navigation in div(id="navigation-H") -->
 <a class="nav-trigger">
@@ -293,7 +293,7 @@
 	更新于
 	<a href="/2019/01/09/django/" itemprop="url">
 		<time datetime="2019-01-09T06:01:27.000Z" itemprop="dateUpdated">
-	  		2019-02-28
+	  		2019-10-11
 	  </time>
 	</a> 	
 
@@ -337,8 +337,7 @@
 </blockquote>
 <ul>
 <li><p>安装<code>virtualenv</code></p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> pip <span class="token function">install</span> virtualenv virtualenvwrapper
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> pip <span class="token function">install</span> virtualenv virtualenvwrapper<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>更改<code>.zshrc</code></p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">export</span> WORKON_HOME<span class="token operator">=</span>/home/mustard/.virtualenvs
@@ -346,8 +345,7 @@
 <span class="token function">export</span> VIRTUALENVWRAPPER_PYTHON<span class="token operator">=</span>/usr/bin/python
 <span class="token function">source</span> /usr/local/bin/virtualenvwrapper.sh
 <span class="token comment" spellcheck="true"># 使更改生效</span>
-<span class="token function">source</span> .zshrc
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">source</span> .zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>创建一个新的项目</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 创建项目目录</span>
@@ -360,8 +358,7 @@ virtualenv --no-site-packages venv
 
 <span class="token comment" spellcheck="true">#进入venv环境</span>
 <span class="token function">source</span> venv/bin/activate
-<span class="token comment" spellcheck="true"># 此时可以使用pip install等命令了</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true"># 此时可以使用pip install等命令了</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 <h2 id="Django"><a href="#Django" class="headerlink" title="Django"></a>Django</h2><ul>
@@ -376,8 +373,7 @@ pip install bpython
 <span class="token comment" spellcheck="true"># 进入bpython，查询django版本</span>
 <span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">import</span> django
 <span class="token operator">>></span><span class="token operator">></span> django<span class="token punctuation">.</span>VERSION
-<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token string">'final'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token string">'final'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 <h3 id="Django基本命令"><a href="#Django基本命令" class="headerlink" title="Django基本命令"></a><code>Django</code>基本命令</h3><ul>
@@ -397,8 +393,7 @@ INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuat
 
     <span class="token string">'learn'</span>,
 <span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 新建的 app 如果不加到 INSTALL_APPS 中的话, django 就不能自动找到app中的模板文件(app-name/templates/下的文件)和静态文件(app-name/static/中的文件)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true"># 新建的 app 如果不加到 INSTALL_APPS 中的话, django 就不能自动找到app中的模板文件(app-name/templates/下的文件)和静态文件(app-name/static/中的文件)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p><code>requirements.txt</code></p>
 <blockquote>
@@ -407,16 +402,14 @@ INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuat
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 生成requirements.txt</span>
 pip3 freeze <span class="token operator">></span>requirements.txt
 <span class="token comment" spellcheck="true"># 部署环境</span>
-pip3 <span class="token function">install</span> -r requirements.txt
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+pip3 <span class="token function">install</span> -r requirements.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 <h2 id="使用Django-Rest-framework框架"><a href="#使用Django-Rest-framework框架" class="headerlink" title="使用Django Rest framework框架"></a>使用Django Rest framework框架</h2><h3 id="基础设置"><a href="#基础设置" class="headerlink" title="基础设置"></a>基础设置</h3><ul>
 <li>下载框架</li>
 </ul>
 <pre class="line-numbers language-bash"><code class="language-bash">pip3 <span class="token function">install</span> djangorestframework
-pip3 <span class="token function">install</span> pygments
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+pip3 <span class="token function">install</span> pygments<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
 <li><p>基础配置</p>
 <ul>
@@ -425,8 +418,7 @@ pip3 <span class="token function">install</span> pygments
 <pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 将'vm.apps.VmConfig'添加到kvm/settings.py中</span>
 INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuation">[</span>
     <span class="token string">'vm.apps.VmConfig'</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>修改项目的url</li>
 </ul>
@@ -436,8 +428,7 @@ INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuat
 urlpatterns <span class="token operator">=</span> <span class="token punctuation">[</span>
     path<span class="token punctuation">(</span><span class="token string">'admin/'</span><span class="token punctuation">,</span> admin<span class="token punctuation">.</span>site<span class="token punctuation">.</span>urls<span class="token punctuation">)</span><span class="token punctuation">,</span>
     url<span class="token punctuation">(</span>r<span class="token string">'^'</span><span class="token punctuation">,</span>include<span class="token punctuation">(</span><span class="token string">'vm.urls'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token punctuation">]</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>创建<code>vm/urls.py</code></li>
 </ul>
@@ -449,8 +440,7 @@ urlpatterns <span class="token operator">=</span> <span class="token punctuation
     url<span class="token punctuation">(</span>r<span class="token string">'^v1/vps/$'</span><span class="token punctuation">,</span>views<span class="token punctuation">.</span>kvm_list<span class="token punctuation">)</span><span class="token punctuation">,</span>
     url<span class="token punctuation">(</span>r<span class="token string">'^v1/vps/kvmname/(?P&lt;name>[a-zA-Z0-9]+)/$'</span><span class="token punctuation">,</span>views<span class="token punctuation">.</span>kvm<span class="token punctuation">)</span><span class="token punctuation">,</span>
 <span class="token punctuation">]</span>
-urlpatterns <span class="token operator">=</span> format_suffix_patterns<span class="token punctuation">(</span>urlpatterns<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+urlpatterns <span class="token operator">=</span> format_suffix_patterns<span class="token punctuation">(</span>urlpatterns<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 <h3 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h3><ul>
@@ -468,8 +458,7 @@ DATABASES <span class="token operator">=</span> <span class="token punctuation">
         <span class="token string">'HOST'</span><span class="token punctuation">:</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span>
         <span class="token string">'PORT'</span><span class="token punctuation">:</span><span class="token string">'3306'</span><span class="token punctuation">,</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>编写模型类</li>
 </ul>
@@ -495,23 +484,38 @@ DATABASES <span class="token operator">=</span> <span class="token punctuation">
     create_at <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span>auto_now_add<span class="token operator">=</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
     <span class="token comment" spellcheck="true"># null=True数据库中的字段允许为空，但是django会自动检测数据不允许为空值，需要添加blank=True才可以</span>
     update_at <span class="token operator">=</span> models<span class="token punctuation">.</span>DateTimeField<span class="token punctuation">(</span>auto_now<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>blank<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    objects <span class="token operator">=</span> models<span class="token punctuation">.</span>Manager<span class="token punctuation">(</span><span class="token punctuation">)</span> 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    objects <span class="token operator">=</span> models<span class="token punctuation">.</span>Manager<span class="token punctuation">(</span><span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>将新建的<code>models</code>同步至数据库</li>
 </ul>
 <pre class="line-numbers language-cmd"><code class="language-cmd"># 查询当前数据库与本地的models之间的差异,生成合并代码
 python manage.py makemigrations
 # 将何必代码导入数据库
-python manage.py migrate
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+python manage.py migrate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>更改数据库<ul>
+<li>清楚project/app/migrate文件夹下除init以外的所有文件</li>
+<li>确保数据库存在且可以正常连接</li>
+<li>清空数据库中的所有数据表<ul>
+<li>可以删除数据库、再创建数据库</li>
+<li>drop database test;</li>
+<li>create database test;</li>
+</ul>
+</li>
+<li>重新将models同步至数据库<ul>
+<li>python manage.py makemigrations</li>
+<li>python manage.py migrate</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="数据库的基本操作-views-py"><a href="#数据库的基本操作-views-py" class="headerlink" title="数据库的基本操作(views.py)"></a>数据库的基本操作(<code>views.py</code>)</h3><ul>
 <li>增</li>
 </ul>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> s3<span class="token punctuation">.</span>models <span class="token keyword">import</span> buckets<span class="token punctuation">,</span>users<span class="token punctuation">,</span>shares
 bucket <span class="token operator">=</span> buckets<span class="token punctuation">(</span>bucket_name <span class="token operator">=</span><span class="token string">'mytest'</span><span class="token punctuation">,</span>create_id<span class="token operator">=</span><span class="token string">'17721803'</span><span class="token punctuation">)</span>
-bucket<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+bucket<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>查</li>
 </ul>
@@ -526,8 +530,7 @@ bucket1 <span class="token operator">=</span> buckets<span class="token punctuat
 bucket1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">]</span>
 <span class="token comment" spellcheck="true"># 获得单条数据</span>
 bucket <span class="token operator">=</span> buckets<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>id <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span>
-bucket <span class="token operator">=</span> buckets<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>id <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+bucket <span class="token operator">=</span> buckets<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>id <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>删</li>
 </ul>
@@ -537,8 +540,7 @@ buckets<span class="token punctuation">.</span>objects<span class="token punctua
 <span class="token comment" spellcheck="true"># 删除多条符合条件的数据</span>
 buckets<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>delete<span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true"># 删除所有数据</span>
-buckets<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>all<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>delete<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+buckets<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>all<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>delete<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>改</li>
 </ul>
@@ -549,13 +551,132 @@ buckets<span class="token punctuation">.</span>objects<span class="token punctua
 user <span class="token operator">=</span> users<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span>create_id<span class="token operator">=</span><span class="token string">'17721803'</span><span class="token punctuation">)</span>
 user<span class="token punctuation">.</span>access_key <span class="token operator">=</span> <span class="token string">'wxmust'</span>
 user<span class="token punctuation">.</span>access_secret <span class="token operator">=</span> <span class="token string">'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY'</span>
-user<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="响应头Response"><a href="#响应头Response" class="headerlink" title="响应头Response"></a>响应头Response</h3><h4 id="返回状态码"><a href="#返回状态码" class="headerlink" title="返回状态码"></a>返回状态码</h4><ul>
+user<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Admin-后台管理界面"><a href="#Admin-后台管理界面" class="headerlink" title="Admin 后台管理界面"></a>Admin 后台管理界面</h3><h4 id="创建admin用户"><a href="#创建admin用户" class="headerlink" title="创建admin用户"></a>创建admin用户</h4><pre class="line-numbers language-bash"><code class="language-bash">python manage.py createsuperuser
+<span class="token comment" spellcheck="true"># 访问127.0.0.1/admin</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="遗忘admin密码"><a href="#遗忘admin密码" class="headerlink" title="遗忘admin密码"></a>遗忘admin密码</h4><pre class="line-numbers language-bash"><code class="language-bash">python manage.py shell
+from django.contrib.auth.models <span class="token function">import</span> User 
+user <span class="token operator">=</span> User.objects.get<span class="token punctuation">(</span>username<span class="token operator">=</span><span class="token string">'admin'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># username 为后台登录的用户名</span>
+user.set_password<span class="token punctuation">(</span><span class="token string">'new admin password'</span><span class="token punctuation">)</span> 
+user.save<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="添加数据库model"><a href="#添加数据库model" class="headerlink" title="添加数据库model"></a>添加数据库model</h4><ul>
+<li>仅添加model</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># project/app/admin.py</span>
+from bucket.models <span class="token function">import</span> Bucket
+admin.site.register<span class="token punctuation">(</span>Bucket<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># project/app/models.py</span>
+from __future__ <span class="token function">import</span> unicode_literals
+from django.db <span class="token function">import</span> models
+from django.utils.encoding <span class="token function">import</span> python_2_unicode_compatible
+<span class="token comment" spellcheck="true"># Create your models here.</span>
+@python_2_unicode_compatible <span class="token comment" spellcheck="true"># 兼容python2、3</span>
+class buckets<span class="token punctuation">(</span>models.Model<span class="token punctuation">)</span>:
+    <span class="token function">id</span> <span class="token operator">=</span> models.AutoField<span class="token punctuation">(</span>primary_key <span class="token operator">=</span> True<span class="token punctuation">)</span>
+    bucket_name <span class="token operator">=</span> models.CharField<span class="token punctuation">(</span>max_length <span class="token operator">=</span> 32<span class="token punctuation">)</span>
+    create_id <span class="token operator">=</span> models.CharField<span class="token punctuation">(</span>max_length <span class="token operator">=</span>8<span class="token punctuation">)</span>
+    create_at <span class="token operator">=</span> models.DateTimeField<span class="token punctuation">(</span>auto_now_add<span class="token operator">=</span> True<span class="token punctuation">)</span>
+    objects <span class="token operator">=</span> models.Manager<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+    <span class="token comment" spellcheck="true"># def __str__()作用：在界面上显示字段名称</span>
+    def __str__<span class="token punctuation">(</span>self<span class="token punctuation">)</span>:<span class="token comment" spellcheck="true"># 在Python3中用 __str__ 代替 __unicode__</span>
+        <span class="token keyword">return</span> self.bucket_name<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>显示models中的其他字段</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># project/app/admin.py</span>
+<span class="token keyword">from</span> bucket<span class="token punctuation">.</span>models <span class="token keyword">import</span> QBucketueue
+
+<span class="token keyword">class</span> <span class="token class-name">bucketsAdmin</span><span class="token punctuation">(</span>admin<span class="token punctuation">.</span>ModelAdmin<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    list_display <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'bucket_name'</span><span class="token punctuation">,</span> <span class="token string">'create_id'</span><span class="token punctuation">,</span> <span class="token string">'create_at'</span><span class="token punctuation">,</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 筛选器 </span>
+    search_fields <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'bucket_name'</span><span class="token punctuation">,</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 提供一个搜索框</span>
+    <span class="token keyword">def</span> <span class="token function">get_readonly_fields</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> request<span class="token punctuation">,</span> obj<span class="token operator">=</span>None<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> obj<span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#This is the case when obj is already created i.e. it's an edit</span>
+            <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token string">'bucket_name'</span><span class="token punctuation">,</span> <span class="token string">'create_id'</span><span class="token punctuation">]</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>readonly_fields <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">if</span> request<span class="token punctuation">.</span>user<span class="token punctuation">.</span>is_superuser<span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># superuser can edit  </span>
+            self<span class="token punctuation">.</span>readonly_fields <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>readonly_fields
+admin<span class="token punctuation">.</span>site<span class="token punctuation">.</span>register<span class="token punctuation">(</span>Bucket<span class="token punctuation">,</span>bucketsAdmin<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="显示on-off标记"><a href="#显示on-off标记" class="headerlink" title="显示on/off标记"></a>显示on/off标记</h4><ul>
+<li>model.py<pre class="line-numbers language-python"><code class="language-python">bucket_name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length <span class="token operator">=</span> <span class="token number">32</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">status</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> self<span class="token punctuation">.</span>bucket_name <span class="token operator">!=</span> <span class="token string">'None'</span>
+status<span class="token punctuation">.</span>boolean <span class="token operator">=</span> <span class="token boolean">True</span>
+objects <span class="token operator">=</span> models<span class="token punctuation">.</span>Manager<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>admin.py<pre class="line-numbers language-python"><code class="language-python">list_display <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'bucket_name'</span><span class="token punctuation">,</span> <span class="token string">'create_id'</span><span class="token punctuation">,</span> <span class="token string">'create_at'</span><span class="token punctuation">,</span><span class="token string">'status'</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="自定义过滤器"><a href="#自定义过滤器" class="headerlink" title="自定义过滤器"></a>自定义过滤器</h4></li>
+<li>设置过滤器<ul>
+<li>admin.py<pre class="line-numbers language-python"><code class="language-python">list_filter <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'bucket_name'</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li>含有输入框的过滤器<ul>
+<li>filter.py<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>contrib<span class="token punctuation">.</span>admin <span class="token keyword">import</span> ListFilter
+<span class="token keyword">from</span> django<span class="token punctuation">.</span>core<span class="token punctuation">.</span>exceptions <span class="token keyword">import</span> ImproperlyConfigured
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<p>class SingleTextInputFilter(ListFilter):<br>    “””<br>    renders filter form with text input and submit button<br>    “””<br>    parameter_name = None<br>    template = “textinput_filter.html”</p>
+<pre><code>def __init__(self, request, params, model, model_admin):
+    super(SingleTextInputFilter, self).__init__(
+        request, params, model, model_admin)
+    if self.parameter_name is None:
+        raise ImproperlyConfigured(
+            &quot;The list filter &#39;%s&#39; does not specify &quot;
+            &quot;a &#39;parameter_name&#39;.&quot; % self.__class__.__name__)
+
+    if self.parameter_name in params:
+        value = params.pop(self.parameter_name)
+        self.used_parameters[self.parameter_name] = value
+
+def value(self):
+    &quot;&quot;&quot;
+    Returns the value (in string format) provided in the request&#39;s
+    query string for this filter, if any. If the value wasn&#39;t provided then
+    returns None.
+    &quot;&quot;&quot;
+    return self.used_parameters.get(self.parameter_name, None)
+
+def has_output(self):
+    return True
+
+def expected_parameters(self):
+    &quot;&quot;&quot;
+    Returns the list of parameter names that are expected from the
+    request&#39;s query string and that will be used by this filter.
+    &quot;&quot;&quot;
+    return [self.parameter_name]
+
+def choices(self, cl):
+    all_choice = {
+        &#39;selected&#39;: self.value() is None,
+        &#39;query_string&#39;: cl.get_query_string({}, [self.parameter_name]),
+        &#39;display&#39;: (&#39;All&#39;),
+    }
+    return ({
+        &#39;get_query&#39;: cl.params,
+        &#39;current_value&#39;: self.value(),
+        &#39;all_choice&#39;: all_choice,
+        &#39;parameter_name&#39;: self.parameter_name
+    }, )</code></pre><pre><code>  - admin.py
+```python
+from monitor.filter import *
+class CatalogAlarmFilter(SingleTextInputFilter):
+    title = &#39;bucket_name&#39;
+    parameter_name = &#39;bucket_name&#39;
+    def queryset(self, request, queryset):
+        if self.value():
+            return queryset.filter(bucket_name=self.value())
+list_filter = [CatalogAlarmFilter,&#39;bucket_name&#39;,] #添加输入框</code></pre><h3 id="响应头Response"><a href="#响应头Response" class="headerlink" title="响应头Response"></a>响应头Response</h3><h4 id="返回状态码"><a href="#返回状态码" class="headerlink" title="返回状态码"></a>返回状态码</h4><ul>
 <li>使用方法：</li>
 </ul>
-<pre class="line-numbers language-python"><code class="language-python"> <span class="token keyword">return</span> Response<span class="token punctuation">(</span>status<span class="token operator">=</span>status<span class="token punctuation">.</span>HTTP_204_NO_CONTENT<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"> <span class="token keyword">return</span> Response<span class="token punctuation">(</span>status<span class="token operator">=</span>status<span class="token punctuation">.</span>HTTP_204_NO_CONTENT<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>状态码列表：</li>
 </ul>
@@ -609,8 +730,7 @@ HTTP_503_SERVICE_UNAVAILABLE <span class="token operator">=</span> <span class="
 HTTP_504_GATEWAY_TIMEOUT <span class="token operator">=</span> <span class="token number">504</span>
 HTTP_505_HTTP_VERSION_NOT_SUPPORTED <span class="token operator">=</span> <span class="token number">505</span>
 HTTP_507_INSUFFICIENT_STORAGE <span class="token operator">=</span> <span class="token number">507</span>
-HTTP_511_NETWORK_AUTHENTICATION_REQUIRED <span class="token operator">=</span> <span class="token number">511</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+HTTP_511_NETWORK_AUTHENTICATION_REQUIRED <span class="token operator">=</span> <span class="token number">511</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="自定义Response响应头"><a href="#自定义Response响应头" class="headerlink" title="自定义Response响应头"></a>自定义Response响应头</h4><blockquote>
 <p>参考资料： <a href="http://www.django-rest-framework.org/api-guide/responses/#creating-responses" target="_blank" rel="noopener">http://www.django-rest-framework.org/api-guide/responses/#creating-responses</a></p>
 </blockquote>
@@ -619,14 +739,36 @@ HTTP_511_NETWORK_AUTHENTICATION_REQUIRED <span class="token operator">=</span> <
     <span class="token comment" spellcheck="true"># response = Response(status = status.HTTP_200_OK)</span>
     response<span class="token punctuation">[</span><span class="token string">'server'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'SHU'</span>
     response1<span class="token punctuation">[</span><span class="token string">'content_type'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'application/octet-stream'</span>
-<span class="token keyword">return</span> response
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">return</span> response<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="字典排序"><a href="#字典排序" class="headerlink" title="字典排序"></a>字典排序</h3><ul>
 <li>按照字典中的<code>Key</code>排序</li>
 </ul>
 <pre class="line-numbers language-python"><code class="language-python">sorted<span class="token punctuation">(</span>dict<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># key升序排列</span>
-sorted<span class="token punctuation">(</span>dict<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>reverse<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># key降序排列</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+sorted<span class="token punctuation">(</span>dict<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>reverse<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># key降序排列</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="Django-启动失败"><a href="#Django-启动失败" class="headerlink" title="Django 启动失败"></a>Django 启动失败</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># No module named _sqlite3</span>
+yum <span class="token function">install</span> sqlite*
+yum <span class="token function">install</span> sqlite-devel 
+<span class="token function">cd</span> python-3.7
+./configure
+<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
+
+<span class="token comment" spellcheck="true"># sudo: pip3: command not found</span>
+<span class="token function">sudo</span> <span class="token function">ln</span> -s /usr/local/bin/pip3 /usr/bin/pip3
+
+<span class="token comment" spellcheck="true"># SQLite 3.8.3 or later is required (found 3.7.17)</span>
+<span class="token comment" spellcheck="true"># 原因： Django版本过高，不兼容，采取降级操作</span>
+pip uninstall django
+pip <span class="token function">install</span> django<span class="token operator">==</span>2.1.8
+<span class="token comment" spellcheck="true"># 如果是用pip3进行安装的，则卸载时应使用pip3</span>
+
+<span class="token comment" spellcheck="true"># pip3 install xxx, error: require TLS/SSL</span>
+<span class="token comment" spellcheck="true"># 原因：缺少SSL模块</span>
+yum <span class="token function">install</span> openssl-devel
+<span class="token comment" spellcheck="true"># 重新编译python</span>
+<span class="token function">cd</span> python-3.7
+./configure --with-ssl
+<span class="token function">make</span>
+<span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 	
 	</div>
 	
@@ -1010,10 +1152,10 @@ pi...
 
     
 	<div id="totop">
-  		<a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a>
+  		<a href="javascript:;"  name="TOTOP" class="fa fa-arrow-up" ></a>
 	</div>
 	<div id="tobuttom">
-		<a href="javascript:;" name="TOBUTTOM" class="fa fa-arrow-down"></a>
+		<a href="javascript:;"  name="TOBUTTOM" class="fa fa-arrow-down" ></a>
 	</div>
  
 

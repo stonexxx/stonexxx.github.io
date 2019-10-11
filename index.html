@@ -8,7 +8,7 @@
 	<html class="scrollbar">
 		
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 	<meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
@@ -18,8 +18,8 @@
     
   </title>
   <meta name="author" content="mustard">
-  <meta name="keywords" content="">
-  <meta name="description" content="">
+  <meta name="keywords" content>
+  <meta name="description" content>
 	<!-- favicon -->
   <link rel="shortcut icon" href="/img/favicon.ico">
 
@@ -164,7 +164,7 @@
 	}
 </style>
 <div class="header-date">
-	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow"></a>
+	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow" ></a>
 	<span id="Beijing_z43d"></span>
 </div>
 <!-- <script src="//widget.time.is/zh.js"></script> -->
@@ -177,7 +177,7 @@
 		}
 	});
 </script>
-</div></header>
+</header>
 
 <!-- Navigation in div(id="navigation-H") -->
 <a class="nav-trigger">
@@ -296,7 +296,7 @@ screenfetch
 sudo ethtool eno1(网卡名称)
 # 查看内存信息
 sudo dmidecode --type memory
-
+free -m (以MB为单位) -k(以KB为单位)
 
 						
 					
@@ -395,7 +395,13 @@ sudo dmidecode --type memory
 ZeroTier 用户
 登录官网（注册，google直接登录）
 创建Networks查看Networks ID（后续所有机器通过该ID加入虚拟网络段）设置虚拟网络段
-查看成员加入内网穿透Ubuntu`bash下载ZeroTiercurl -s ‘https://pgp.mit.edu/pks/lookup?op=get&amp;search=0x1657198823E52A61&#39;...
+查看成员
+使用Zerotier软件添加ID后，管理页面的members下会自动分配虚拟ip地址，等待状态变为online就可以通过虚拟ip地址连接了。
+
+
+
+加入内网穿透Ubuntu# 下载ZeroTier
+curl -s ...
 						
 					
 				</div>
@@ -586,11 +592,9 @@ sudo pip instal...
 						
 							Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
 Quick StartCreate a new post$ hexo new "My New Post"
-
 More info: Writing
 Run server$ hexo server
-
-More...
+More i...
 						
 					
 				</div>
@@ -978,10 +982,10 @@ vim /etc/...
 
     
 	<div id="totop">
-  		<a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a>
+  		<a href="javascript:;"  name="TOTOP" class="fa fa-arrow-up" ></a>
 	</div>
 	<div id="tobuttom">
-		<a href="javascript:;" name="TOBUTTOM" class="fa fa-arrow-down"></a>
+		<a href="javascript:;"  name="TOBUTTOM" class="fa fa-arrow-down" ></a>
 	</div>
  
 

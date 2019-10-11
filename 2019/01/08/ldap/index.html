@@ -8,7 +8,7 @@
 	<html class="scrollbar">
 		
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 	<meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
@@ -18,8 +18,8 @@
     
   </title>
   <meta name="author" content="mustard">
-  <meta name="keywords" content="">
-  <meta name="description" content="">
+  <meta name="keywords" content>
+  <meta name="description" content>
 	<!-- favicon -->
   <link rel="shortcut icon" href="/img/favicon.ico">
 
@@ -164,7 +164,7 @@
 	}
 </style>
 <div class="header-date">
-	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow"></a>
+	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow" ></a>
 	<span id="Beijing_z43d"></span>
 </div>
 <!-- <script src="//widget.time.is/zh.js"></script> -->
@@ -177,7 +177,7 @@
 		}
 	});
 </script>
-</div></header>
+</header>
 
 <!-- Navigation in div(id="navigation-H") -->
 <a class="nav-trigger">
@@ -337,8 +337,7 @@
 <span class="token function">sudo</span> python -m pip <span class="token function">install</span> python-ldap
 <span class="token comment" spellcheck="true"># 在python3.7中安装ldap库，路径为/usr/local/bin/python3</span>
 <span class="token comment" spellcheck="true"># python3.7 -> ../Cellar/python/3.7.1/bin/python3.7</span>
-<span class="token function">sudo</span> pip3.7 <span class="token function">install</span> python-ldap
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">sudo</span> pip3.7 <span class="token function">install</span> python-ldap<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="http://www.python-ldap.org/en/latest/resources.html" target="_blank" rel="noopener">官方文档</a><br><a href="https://hub.packtpub.com/python-ldap-applications-part-1-installing-and-configuring-python-ldap-library-and-bin/#" target="_blank" rel="noopener">第三方文档1</a><br><a href="https://hub.packtpub.com/configuring-and-securing-python-ldap-applications-part-2/" target="_blank" rel="noopener">第三方文档2</a></p>
 <h3 id="用户验证"><a href="#用户验证" class="headerlink" title="用户验证"></a>用户验证</h3><ul>
 <li>基本操作</li>
@@ -406,8 +405,7 @@ config<span class="token operator">=</span><span class="token punctuation">{</sp
     usr_base_dn <span class="token operator">=</span> <span class="token string">'ou=people,dc=dlcloud,dc=info'</span>
     dn <span class="token operator">=</span> getdn_by_usrname<span class="token punctuation">(</span>con<span class="token punctuation">,</span> usr_base_dn<span class="token punctuation">,</span><span class="token string">'xwang'</span><span class="token punctuation">)</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>verify_usr<span class="token punctuation">(</span>con<span class="token punctuation">,</span> dn<span class="token punctuation">,</span> <span class="token string">'123456'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">pass</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="结果分析"><a href="#结果分析" class="headerlink" title="结果分析"></a>结果分析</h4><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> ldap<span class="token punctuation">.</span>cidict <span class="token keyword">import</span> cidict
 <span class="token keyword">class</span> <span class="token class-name">LDAPSearchResult</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">"""
@@ -509,8 +507,7 @@ config<span class="token operator">=</span><span class="token punctuation">{</sp
             <span class="token keyword">return</span> res
         <span class="token keyword">for</span> item <span class="token keyword">in</span> arr<span class="token punctuation">:</span>
             res<span class="token punctuation">.</span>append<span class="token punctuation">(</span> LDAPSearchResult<span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token punctuation">)</span>
-        <span class="token keyword">return</span> res
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token keyword">return</span> res<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 	
 	</div>
 	
@@ -894,10 +891,10 @@ pi...
 
     
 	<div id="totop">
-  		<a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a>
+  		<a href="javascript:;"  name="TOTOP" class="fa fa-arrow-up" ></a>
 	</div>
 	<div id="tobuttom">
-		<a href="javascript:;" name="TOBUTTOM" class="fa fa-arrow-down"></a>
+		<a href="javascript:;"  name="TOBUTTOM" class="fa fa-arrow-down" ></a>
 	</div>
  
 

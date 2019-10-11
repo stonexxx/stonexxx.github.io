@@ -8,7 +8,7 @@
 	<html class="scrollbar">
 		
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 	<meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
@@ -18,8 +18,8 @@
     
   </title>
   <meta name="author" content="mustard">
-  <meta name="keywords" content="">
-  <meta name="description" content="">
+  <meta name="keywords" content>
+  <meta name="description" content>
 	<!-- favicon -->
   <link rel="shortcut icon" href="/img/favicon.ico">
 
@@ -164,7 +164,7 @@
 	}
 </style>
 <div class="header-date">
-	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow"></a>
+	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow" ></a>
 	<span id="Beijing_z43d"></span>
 </div>
 <!-- <script src="//widget.time.is/zh.js"></script> -->
@@ -177,7 +177,7 @@
 		}
 	});
 </script>
-</div></header>
+</header>
 
 <!-- Navigation in div(id="navigation-H") -->
 <a class="nav-trigger">
@@ -293,7 +293,7 @@
 	更新于
 	<a href="/2019/02/28/zerotier/" itemprop="url">
 		<time datetime="2019-02-28T13:46:15.000Z" itemprop="dateUpdated">
-	  		2019-02-28
+	  		2019-03-28
 	  </time>
 	</a> 	
 
@@ -337,17 +337,25 @@
 <h2 id="ZeroTier-用户"><a href="#ZeroTier-用户" class="headerlink" title="ZeroTier 用户"></a>ZeroTier 用户</h2><ul>
 <li>登录官网（注册，google直接登录）</li>
 <li>创建Networks<br><img src="https://vgy.me/dZBIiU.png" alt="创建虚拟网络段"><br>查看Networks ID（后续所有机器通过该ID加入虚拟网络段）<br><img src="https://vgy.me/jiB5kn.png" alt="Networks ID"><br>设置虚拟网络段<br><img src="https://vgy.me/0gsmZ3.png" alt="虚拟网络段"></li>
-<li>查看成员<br><img src="https://vgy.me/7G4cEq.png" alt=""><h2 id="加入内网穿透"><a href="#加入内网穿透" class="headerlink" title="加入内网穿透"></a>加入内网穿透</h2><h3 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h3><code>`</code>bash<h1 id="下载ZeroTier"><a href="#下载ZeroTier" class="headerlink" title="下载ZeroTier"></a>下载ZeroTier</h1>curl -s ‘<a href="https://pgp.mit.edu/pks/lookup?op=get&amp;search=0x1657198823E52A61&#39;" target="_blank" rel="noopener">https://pgp.mit.edu/pks/lookup?op=get&amp;search=0x1657198823E52A61&#39;</a> | gpg –import &amp;&amp; \<br>if z=$(curl -s ‘<a href="https://install.zerotier.com/&#39;" target="_blank" rel="noopener">https://install.zerotier.com/&#39;</a> | gpg); then echo “$z” | sudo bash; fi</li>
+<li>查看成员<br><img src="https://vgy.me/7G4cEq.png" alt="members"><blockquote>
+<p>使用Zerotier软件添加<code>ID</code>后，管理页面的<code>members</code>下会自动分配<code>虚拟ip</code>地址，等待状态变为<code>online</code>就可以通过<code>虚拟ip</code>地址连接了。</p>
+</blockquote>
+</li>
 </ul>
-<p>curl -s <a href="https://install.zerotier.com/" target="_blank" rel="noopener">https://install.zerotier.com/</a> | sudo bash</p>
-<h1 id="加入虚拟网络段"><a href="#加入虚拟网络段" class="headerlink" title="加入虚拟网络段"></a>加入虚拟网络段</h1><p>zerotier-cli join 885033890a8e503</p>
-<h1 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h1><p>sudo cat /var/lib/zerotier-one/authtoken.secret &gt;&gt;.zeroTierOneAuthToken</p>
-<h1 id="最后回到用户管理界面通过就好了"><a href="#最后回到用户管理界面通过就好了" class="headerlink" title="最后回到用户管理界面通过就好了"></a>最后回到用户管理界面通过就好了</h1><pre><code>
-## 使用
-```bash
-ssh 172.22.37.38
-ssh haili@172.22.231.31
-</code></pre>	
+<h2 id="加入内网穿透"><a href="#加入内网穿透" class="headerlink" title="加入内网穿透"></a>加入内网穿透</h2><h3 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 下载ZeroTier</span>
+curl -s <span class="token string">'https://pgp.mit.edu/pks/lookup?op=get&amp;search=0x1657198823E52A61'</span> <span class="token operator">|</span> gpg --import <span class="token operator">&amp;&amp;</span> \
+<span class="token keyword">if</span> z<span class="token operator">=</span><span class="token punctuation">$(</span>curl -s <span class="token string">'https://install.zerotier.com/'</span> <span class="token operator">|</span> gpg<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">then</span> <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">$z</span>"</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">bash</span><span class="token punctuation">;</span> <span class="token keyword">fi</span>
+
+curl -s https://install.zerotier.com/ <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">bash</span>
+<span class="token comment" spellcheck="true"># 加入虚拟网络段</span>
+zerotier-cli <span class="token function">join</span> 885033890a8e503
+<span class="token comment" spellcheck="true"># 授权</span>
+<span class="token function">sudo</span> <span class="token function">cat</span> /var/lib/zerotier-one/authtoken.secret <span class="token operator">>></span>.zeroTierOneAuthToken
+<span class="token comment" spellcheck="true"># 最后回到用户管理界面通过就好了</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="win、mac"><a href="#win、mac" class="headerlink" title="win、mac"></a>win、mac</h3><p>win、mac平台下都有相应的软件app可以使用，直接下载安装即可。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">ssh</span> 172.22.37.38
+<span class="token function">ssh</span> haili@172.22.231.31<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+	
 	</div>
 	
 	<div id="current-post-cover" data-scr="https://s2.ax1x.com/2019/01/08/FqTlG9.jpg"></div>
@@ -727,10 +735,10 @@ pi...
 
     
 	<div id="totop">
-  		<a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a>
+  		<a href="javascript:;"  name="TOTOP" class="fa fa-arrow-up" ></a>
 	</div>
 	<div id="tobuttom">
-		<a href="javascript:;" name="TOBUTTOM" class="fa fa-arrow-down"></a>
+		<a href="javascript:;"  name="TOBUTTOM" class="fa fa-arrow-down" ></a>
 	</div>
  
 
