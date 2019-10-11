@@ -600,80 +600,91 @@ class buckets<span class="token punctuation">(</span>models.Model<span class="to
         <span class="token keyword">return</span> self<span class="token punctuation">.</span>readonly_fields
 admin<span class="token punctuation">.</span>site<span class="token punctuation">.</span>register<span class="token punctuation">(</span>Bucket<span class="token punctuation">,</span>bucketsAdmin<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="显示on-off标记"><a href="#显示on-off标记" class="headerlink" title="显示on/off标记"></a>显示on/off标记</h4><ul>
-<li>model.py<pre class="line-numbers language-python"><code class="language-python">bucket_name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length <span class="token operator">=</span> <span class="token number">32</span><span class="token punctuation">)</span>
+<li><p>model.py</p>
+<pre class="line-numbers language-python"><code class="language-python">bucket_name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length <span class="token operator">=</span> <span class="token number">32</span><span class="token punctuation">)</span>
 <span class="token keyword">def</span> <span class="token function">status</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
       <span class="token keyword">return</span> self<span class="token punctuation">.</span>bucket_name <span class="token operator">!=</span> <span class="token string">'None'</span>
 status<span class="token punctuation">.</span>boolean <span class="token operator">=</span> <span class="token boolean">True</span>
 objects <span class="token operator">=</span> models<span class="token punctuation">.</span>Manager<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li>admin.py<pre class="line-numbers language-python"><code class="language-python">list_display <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'bucket_name'</span><span class="token punctuation">,</span> <span class="token string">'create_id'</span><span class="token punctuation">,</span> <span class="token string">'create_at'</span><span class="token punctuation">,</span><span class="token string">'status'</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<li><p>admin.py</p>
+<pre class="line-numbers language-python"><code class="language-python">list_display <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'bucket_name'</span><span class="token punctuation">,</span> <span class="token string">'create_id'</span><span class="token punctuation">,</span> <span class="token string">'create_at'</span><span class="token punctuation">,</span><span class="token string">'status'</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="自定义过滤器"><a href="#自定义过滤器" class="headerlink" title="自定义过滤器"></a>自定义过滤器</h4></li>
-<li>设置过滤器<ul>
+<li><p>设置过滤器</p>
+<ul>
 <li>admin.py<pre class="line-numbers language-python"><code class="language-python">list_filter <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'bucket_name'</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 </ul>
 </li>
-<li>含有输入框的过滤器<ul>
-<li>filter.py<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>contrib<span class="token punctuation">.</span>admin <span class="token keyword">import</span> ListFilter
+<li><p>含有输入框的过滤器</p>
+<ul>
+<li><p>filter.py</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>contrib<span class="token punctuation">.</span>admin <span class="token keyword">import</span> ListFilter
 <span class="token keyword">from</span> django<span class="token punctuation">.</span>core<span class="token punctuation">.</span>exceptions <span class="token keyword">import</span> ImproperlyConfigured
+<span class="token keyword">class</span> <span class="token class-name">SingleTextInputFilter</span><span class="token punctuation">(</span>ListFilter<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token triple-quoted-string string">"""
+renders filter form with text input and submit button
+"""</span>
+parameter_name <span class="token operator">=</span> None
+template <span class="token operator">=</span> <span class="token string">"textinput_filter.html"</span>
 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-</li>
-</ul>
-<p>class SingleTextInputFilter(ListFilter):<br>    “””<br>    renders filter form with text input and submit button<br>    “””<br>    parameter_name = None<br>    template = “textinput_filter.html”</p>
-<pre><code>def __init__(self, request, params, model, model_admin):
-    super(SingleTextInputFilter, self).__init__(
-        request, params, model, model_admin)
-    if self.parameter_name is None:
-        raise ImproperlyConfigured(
-            &quot;The list filter &#39;%s&#39; does not specify &quot;
-            &quot;a &#39;parameter_name&#39;.&quot; % self.__class__.__name__)
+<span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> request<span class="token punctuation">,</span> params<span class="token punctuation">,</span> model<span class="token punctuation">,</span> model_admin<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    super<span class="token punctuation">(</span>SingleTextInputFilter<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>
+        request<span class="token punctuation">,</span> params<span class="token punctuation">,</span> model<span class="token punctuation">,</span> model_admin<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> self<span class="token punctuation">.</span>parameter_name <span class="token keyword">is</span> None<span class="token punctuation">:</span>
+        <span class="token keyword">raise</span> ImproperlyConfigured<span class="token punctuation">(</span>
+            <span class="token string">"The list filter '%s' does not specify "</span>
+            <span class="token string">"a 'parameter_name'."</span> <span class="token operator">%</span> self<span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__name__<span class="token punctuation">)</span>
 
-    if self.parameter_name in params:
-        value = params.pop(self.parameter_name)
-        self.used_parameters[self.parameter_name] = value
+    <span class="token keyword">if</span> self<span class="token punctuation">.</span>parameter_name <span class="token keyword">in</span> params<span class="token punctuation">:</span>
+        value <span class="token operator">=</span> params<span class="token punctuation">.</span>pop<span class="token punctuation">(</span>self<span class="token punctuation">.</span>parameter_name<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>used_parameters<span class="token punctuation">[</span>self<span class="token punctuation">.</span>parameter_name<span class="token punctuation">]</span> <span class="token operator">=</span> value
 
-def value(self):
-    &quot;&quot;&quot;
-    Returns the value (in string format) provided in the request&#39;s
-    query string for this filter, if any. If the value wasn&#39;t provided then
+<span class="token keyword">def</span> <span class="token function">value</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    Returns the value (in string format) provided in the request's
+    query string for this filter, if any. If the value wasn't provided then
     returns None.
-    &quot;&quot;&quot;
-    return self.used_parameters.get(self.parameter_name, None)
+    """</span>
+    <span class="token keyword">return</span> self<span class="token punctuation">.</span>used_parameters<span class="token punctuation">.</span>get<span class="token punctuation">(</span>self<span class="token punctuation">.</span>parameter_name<span class="token punctuation">,</span> None<span class="token punctuation">)</span>
 
-def has_output(self):
-    return True
+<span class="token keyword">def</span> <span class="token function">has_output</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token boolean">True</span>
 
-def expected_parameters(self):
-    &quot;&quot;&quot;
+<span class="token keyword">def</span> <span class="token function">expected_parameters</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
     Returns the list of parameter names that are expected from the
-    request&#39;s query string and that will be used by this filter.
-    &quot;&quot;&quot;
-    return [self.parameter_name]
+    request's query string and that will be used by this filter.
+    """</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>self<span class="token punctuation">.</span>parameter_name<span class="token punctuation">]</span>
 
-def choices(self, cl):
-    all_choice = {
-        &#39;selected&#39;: self.value() is None,
-        &#39;query_string&#39;: cl.get_query_string({}, [self.parameter_name]),
-        &#39;display&#39;: (&#39;All&#39;),
-    }
-    return ({
-        &#39;get_query&#39;: cl.params,
-        &#39;current_value&#39;: self.value(),
-        &#39;all_choice&#39;: all_choice,
-        &#39;parameter_name&#39;: self.parameter_name
-    }, )</code></pre><pre><code>  - admin.py
-```python
-from monitor.filter import *
-class CatalogAlarmFilter(SingleTextInputFilter):
-    title = &#39;bucket_name&#39;
-    parameter_name = &#39;bucket_name&#39;
-    def queryset(self, request, queryset):
-        if self.value():
-            return queryset.filter(bucket_name=self.value())
-list_filter = [CatalogAlarmFilter,&#39;bucket_name&#39;,] #添加输入框</code></pre><h3 id="响应头Response"><a href="#响应头Response" class="headerlink" title="响应头Response"></a>响应头Response</h3><h4 id="返回状态码"><a href="#返回状态码" class="headerlink" title="返回状态码"></a>返回状态码</h4><ul>
+<span class="token keyword">def</span> <span class="token function">choices</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> cl<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    all_choice <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'selected'</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>value<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">is</span> None<span class="token punctuation">,</span>
+        <span class="token string">'query_string'</span><span class="token punctuation">:</span> cl<span class="token punctuation">.</span>get_query_string<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>self<span class="token punctuation">.</span>parameter_name<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">'display'</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token string">'All'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token string">'get_query'</span><span class="token punctuation">:</span> cl<span class="token punctuation">.</span>params<span class="token punctuation">,</span>
+        <span class="token string">'current_value'</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>value<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">'all_choice'</span><span class="token punctuation">:</span> all_choice<span class="token punctuation">,</span>
+        <span class="token string">'parameter_name'</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>parameter_name
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>admin.py</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> monitor<span class="token punctuation">.</span>filter <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token keyword">class</span> <span class="token class-name">CatalogAlarmFilter</span><span class="token punctuation">(</span>SingleTextInputFilter<span class="token punctuation">)</span><span class="token punctuation">:</span>
+title <span class="token operator">=</span> <span class="token string">'bucket_name'</span>
+parameter_name <span class="token operator">=</span> <span class="token string">'bucket_name'</span>
+<span class="token keyword">def</span> <span class="token function">queryset</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> request<span class="token punctuation">,</span> queryset<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> self<span class="token punctuation">.</span>value<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> queryset<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>bucket_name<span class="token operator">=</span>self<span class="token punctuation">.</span>value<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+list_filter <span class="token operator">=</span> <span class="token punctuation">[</span>CatalogAlarmFilter<span class="token punctuation">,</span><span class="token string">'bucket_name'</span><span class="token punctuation">,</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#添加输入框</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="响应头Response"><a href="#响应头Response" class="headerlink" title="响应头Response"></a>响应头Response</h3><h4 id="返回状态码"><a href="#返回状态码" class="headerlink" title="返回状态码"></a>返回状态码</h4><ul>
 <li>使用方法：</li>
 </ul>
 <pre class="line-numbers language-python"><code class="language-python"> <span class="token keyword">return</span> Response<span class="token punctuation">(</span>status<span class="token operator">=</span>status<span class="token punctuation">.</span>HTTP_204_NO_CONTENT<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
