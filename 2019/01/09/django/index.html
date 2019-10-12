@@ -809,14 +809,14 @@ python manage.py <span class="token function">crontab</span> remove
 </li>
 <li>Q&amp;A<ul>
 <li>定时任务手动执行正常，系统执行无效<ul>
-<li>可能是环境变量的原因<br>```bash<h1 id="更改前："><a href="#更改前：" class="headerlink" title="更改前："></a>更改前：</h1></li>
+<li>可能是环境变量的原因<br>```bash<h1 id="更改前："><a href="#更改前：" class="headerlink" title="更改前："></a>更改前：</h1></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<p><em>/1 * * * * /usr/bin/python /**</em>/manage.py crontab run 34bf68c934db32c342c73177eb00c541 &gt;&gt; /***/crontest/list.log# django-cronjob</p>
-<h1 id="更改后："><a href="#更改后：" class="headerlink" title="更改后："></a>更改后：</h1><p><em>/1 * * * *  source /etc/profile &amp;&amp; /usr/bin/python /**</em>/manage.py crontab run 34bf68c934db32c342c73177eb00c541 &gt;&gt; /***/crontest/list.log# django-cronjob</p>
+<p><em>/1 * * * * /usr/bin/python /**</em>/manage.py crontab run 34bf68c934db32c342c73177eb00c541 &gt;&gt; /***/crontest/list.log</p>
+<h1 id="更改后："><a href="#更改后：" class="headerlink" title="更改后："></a>更改后：</h1><p><em>/1 * * * *  source /etc/profile &amp;&amp; /usr/bin/python /**</em>/manage.py crontab run 34bf68c934db32c342c73177eb00c541 &gt;&gt; /***/crontest/list.log</p>
 <pre><code></code></pre>	
 	</div>
 	
