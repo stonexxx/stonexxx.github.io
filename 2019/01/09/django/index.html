@@ -293,7 +293,7 @@
 	更新于
 	<a href="/2019/01/09/django/" itemprop="url">
 		<time datetime="2019-01-09T06:01:27.000Z" itemprop="dateUpdated">
-	  		2019-10-11
+	  		2019-10-12
 	  </time>
 	</a> 	
 
@@ -780,7 +780,44 @@ yum <span class="token function">install</span> openssl-devel
 ./configure --with-ssl
 <span class="token function">make</span>
 <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-	
+<h2 id="Django-crontab"><a href="#Django-crontab" class="headerlink" title="Django-crontab"></a>Django-crontab</h2><p><a href="https://pypi.org/project/django-crontab/" target="_blank" rel="noopener">参考文档</a></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 安装</span>
+pip <span class="token function">install</span> django-crontab<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>settings.py<pre class="line-numbers language-bash"><code class="language-bash">INSTALLED_APPS <span class="token operator">=</span> <span class="token punctuation">(</span>
+  <span class="token string">'django_crontab'</span>,
+  <span class="token punctuation">..</span>.
+<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>定时任务函数 cron.py<pre class="line-numbers language-bash"><code class="language-bash">def my_scheduled_job<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+pass<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li>setting.py设置定时任务<pre class="line-numbers language-bash"><code class="language-bash">CRONJOBS <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">(</span><span class="token string">'*/5 * * * *'</span>, <span class="token string">'myapp.cron.my_scheduled_job'</span>, <span class="token string">'>> /***/crontest/list.log'</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>定时任务操作<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 添加</span>
+python manage.py <span class="token function">crontab</span> add
+<span class="token comment" spellcheck="true"># 查看</span>
+python manage.py <span class="token function">crontab</span> show
+<span class="token comment" spellcheck="true"># 删除</span>
+python manage.py <span class="token function">crontab</span> remove
+<span class="token comment" spellcheck="true"># 查看机器定时任务</span>
+<span class="token function">crontab</span> -l 
+<span class="token comment" spellcheck="true"># 编辑机器定时任务</span>
+<span class="token function">crontab</span> -e<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>Q&amp;A<ul>
+<li>定时任务手动执行正常，系统执行无效<ul>
+<li>可能是环境变量的原因<br>```bash<h1 id="更改前："><a href="#更改前：" class="headerlink" title="更改前："></a>更改前：</h1></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><em>/1 * * * * /usr/bin/python /**</em>/manage.py crontab run 34bf68c934db32c342c73177eb00c541 &gt;&gt; /***/crontest/list.log# django-cronjob</p>
+<h1 id="更改后："><a href="#更改后：" class="headerlink" title="更改后："></a>更改后：</h1><p><em>/1 * * * *  source /etc/profile &amp;&amp; /usr/bin/python /**</em>/manage.py crontab run 34bf68c934db32c342c73177eb00c541 &gt;&gt; /***/crontest/list.log# django-cronjob</p>
+<pre><code></code></pre>	
 	</div>
 	
 	<div id="current-post-cover" data-scr="https://s2.ax1x.com/2019/01/08/FqTlG9.jpg"></div>
