@@ -293,7 +293,7 @@
 	更新于
 	<a href="/2019/01/09/django/" itemprop="url">
 		<time datetime="2019-01-09T06:01:27.000Z" itemprop="dateUpdated">
-	  		2019-10-12
+	  		2019-10-14
 	  </time>
 	</a> 	
 
@@ -332,7 +332,7 @@
 	<div class="article-content" id="article-content">
 		<h1 id="企业级开发框架-Django"><a href="#企业级开发框架-Django" class="headerlink" title="企业级开发框架-Django"></a>企业级开发框架-Django</h1><h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><blockquote>
 <p>在开发Python应用程序的时候，系统安装的Python3只有一个版本：3.4。所有第三方的包都会被<code>pip</code>安装到Python3的<code>site-packages</code>目录下。</p>
-<p>如果我们要同时开发多个应用程序，那这些应用程序都会共用一个Python，就是安装在系统的Python 3。如果应用A需要jinja 2.7，而应用B需要jinja 2.6怎么办？</p>
+<p>如果我们要同时开发多个应用程序，那这些应用程序都会共用一个Python，就是安装在系统的Python 3。如果应用A需要Python 2.7，而应用B需要Python 2.6怎么办？</p>
 <p>这种情况下，每个应用可能需要各自拥有一套“独立”的Python运行环境。virtualenv就是用来为一个应用创建一套“隔离”的Python运行环境.</p>
 </blockquote>
 <ul>
@@ -809,15 +809,17 @@ python manage.py <span class="token function">crontab</span> remove
 </li>
 <li>Q&amp;A<ul>
 <li>定时任务手动执行正常，系统执行无效<ul>
-<li>可能是环境变量的原因<br>```bash<h1 id="更改前："><a href="#更改前：" class="headerlink" title="更改前："></a>更改前：</h1></li>
+<li>可能是环境变量的原因</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<p><em>/1 * * * * /usr/bin/python /**</em>/manage.py crontab run 34bf68c934db32c342c73177eb00c541 &gt;&gt; /***/crontest/list.log</p>
-<h1 id="更改后："><a href="#更改后：" class="headerlink" title="更改后："></a>更改后：</h1><p><em>/1 * * * *  source /etc/profile &amp;&amp; /usr/bin/python /**</em>/manage.py crontab run 34bf68c934db32c342c73177eb00c541 &gt;&gt; /***/crontest/list.log</p>
-<pre><code></code></pre>	
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 更改前：</span>
+*/1 * * * * /usr/bin/python /***/manage.py <span class="token function">crontab</span> run 34bf68c934db32c342c73177eb00c541 <span class="token operator">>></span> /***/crontest/list.log
+<span class="token comment" spellcheck="true"># 更改后：</span>
+*/1 * * * *  <span class="token function">source</span> /etc/profile <span class="token operator">&amp;&amp;</span> /usr/bin/python /***/manage.py <span class="token function">crontab</span> run 34bf68c934db32c342c73177eb00c541 <span class="token operator">>></span> /***/crontest/list.log<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+	
 	</div>
 	
 	<div id="current-post-cover" data-scr="https://s2.ax1x.com/2019/01/08/FqTlG9.jpg"></div>
