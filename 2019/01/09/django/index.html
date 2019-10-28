@@ -293,7 +293,7 @@
 	更新于
 	<a href="/2019/01/09/django/" itemprop="url">
 		<time datetime="2019-01-09T06:01:27.000Z" itemprop="dateUpdated">
-	  		2019-10-14
+	  		2019-10-28
 	  </time>
 	</a> 	
 
@@ -819,6 +819,79 @@ python manage.py <span class="token function">crontab</span> remove
 */1 * * * * /usr/bin/python /***/manage.py <span class="token function">crontab</span> run 34bf68c934db32c342c73177eb00c541 <span class="token operator">>></span> /***/crontest/list.log
 <span class="token comment" spellcheck="true"># 更改后：</span>
 */1 * * * *  <span class="token function">source</span> /etc/profile <span class="token operator">&amp;&amp;</span> /usr/bin/python /***/manage.py <span class="token function">crontab</span> run 34bf68c934db32c342c73177eb00c541 <span class="token operator">>></span> /***/crontest/list.log<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="html页面"><a href="#html页面" class="headerlink" title="html页面"></a>html页面</h2><blockquote>
+<p>html\vue\js</p>
+</blockquote>
+<h3 id="下拉框"><a href="#下拉框" class="headerlink" title="下拉框"></a>下拉框</h3><ul>
+<li><p>html页面</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>addm<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">20</span>px</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>queue_name<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>  
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>area<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>area<span class="token punctuation">"</span></span> <span class="token attr-name">@change</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>getAreaSelected<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">:value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>area.id<span class="token punctuation">"</span></span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>area in areaList<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> {% verbatim myblock %} {{ area.name }} {% endverbatim myblock %} <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span> 
+  <span class="token comment" spellcheck="true">&lt;!-- Django与VUE语法冲突 -> 有时页面会不显示area.name的值,加标签就好了--></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name"><span class="token namespace">v-on:</span>click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>search_monitor<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>查询<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+  <span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      el<span class="token punctuation">:</span> <span class="token string">'#addm'</span><span class="token punctuation">,</span>
+      data<span class="token punctuation">:</span><span class="token punctuation">{</span>
+          queue_name<span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span>
+          areaList<span class="token punctuation">:</span>
+          <span class="token punctuation">[</span>
+              <span class="token punctuation">{</span>
+                  id<span class="token punctuation">:</span> <span class="token string">'a'</span><span class="token punctuation">,</span>
+                  name<span class="token punctuation">:</span> <span class="token string">'国内'</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              <span class="token punctuation">{</span>
+                  id<span class="token punctuation">:</span> <span class="token string">'b'</span><span class="token punctuation">,</span>
+                  name<span class="token punctuation">:</span> <span class="token string">'海外'</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              <span class="token punctuation">{</span>
+                  id<span class="token punctuation">:</span> <span class="token string">'c'</span><span class="token punctuation">,</span>
+                  name<span class="token punctuation">:</span> <span class="token string">'新加坡'</span>
+              <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          area<span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span>
+      <span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>area <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>areaList<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">;</span> 
+          <span class="token comment" spellcheck="true">//如果没有这句代码，select中初始化会是空白的，默认选中就无法实现</span>
+      <span class="token punctuation">}</span>
+      methods<span class="token punctuation">:</span><span class="token punctuation">{</span>
+          <span class="token function">getAreaSelected</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>area<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          search_monitor<span class="token punctuation">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+              <span class="token keyword">var</span> self <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+              $<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                      type<span class="token punctuation">:</span> <span class="token string">"POST"</span><span class="token punctuation">,</span>
+                      url<span class="token punctuation">:</span> <span class="token string">"{% url 'cmq:api_search_monitor' %}"</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">//urls.py路由转发</span>
+                      data<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token string">"queue_name"</span><span class="token punctuation">:</span>self<span class="token punctuation">.</span>queue_name<span class="token punctuation">,</span><span class="token string">"queue_area"</span><span class="token punctuation">:</span><span class="token keyword">this</span><span class="token punctuation">.</span>area<span class="token punctuation">}</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">//向后台传入数据            </span>
+                      <span class="token keyword">async</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                      dataType<span class="token punctuation">:</span> <span class="token string">"json"</span><span class="token punctuation">,</span>
+                      success<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                          self<span class="token punctuation">.</span>num <span class="token operator">=</span> res<span class="token punctuation">.</span>info<span class="token punctuation">;</span>
+                          <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#area'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">'value'</span><span class="token punctuation">,</span>res<span class="token punctuation">.</span>areaid<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//获得后台传回的数据并更新在页面中</span>
+                      <span class="token punctuation">}</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>py后台处理</p>
+<pre class="line-numbers language-py"><code class="language-py">@csrf_exempt
+def search_monitor(request):
+  # 查询队列当前告警配置信息
+  if request.method == "POST":
+      html_queue_area = request.POST.get("queue_area")
+      result = {"status": "success"}
+      result["areaid"] = "c" #数据处理
+      return JsonResponse(result)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
 	
 	</div>
 	
