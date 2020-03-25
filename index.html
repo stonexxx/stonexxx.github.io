@@ -281,6 +281,106 @@
 				<div class="post-title" id="post-title-index">			
 					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 					
+	<a href="/2020/03/25/Python——pandas/" itemprop="url">
+		Python——pandas
+	</a>
+
+				</div>
+
+				<div class="post-content">
+					
+						
+							PandasTIPS:1: to_csv 编码问题'ascii' codec can't encode characters in position 8-50: ordinal not in range(128)
+
+原因：Python在安装时，默认的编码是ascii，当程序中出现非ascii编码时，python的处理常常会报这样的错
+
+
+解决方法 # encoding=utf8  
+import sys  
+reload(sys)  
+sys.setdefaultencoding('utf8')  
+# 一劳永逸：新建文档Lib\site-packages\sitecustomize.p...
+						
+					
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						发布于
+						<i>
+							
+	<a href="/2020/03/25/Python——pandas/" itemprop="url">
+		<time datetime="2020-03-25T01:57:26.000Z" itemprop="datePublished">
+	  		2020-03-25
+	  </time>
+	</a> 		
+
+						</i>
+					</span>
+					/
+					
+
+    <span class="leancloud_visitors" id="/2020/03/25/Python——pandas/_visitors" data-url="/2020/03/25/Python——pandas/" data-title="Python——pandas">
+        热度
+        <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
+    </span>
+    
+    /
+
+
+
+    <span class="leancloud_likes" id="/2020/03/25/Python——pandas/_likes" data-url="/2020/03/25/Python——pandas/" data-title="Python——pandas" rel="unlike">
+        喜欢
+        <i class="fa fa-heart"></i>
+        <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
+    </span>
+
+					
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+
+	<script>
+		var appid = 'dX--',
+            appkey = 'dx--';	  
+        AnnieLeancloud(appid, appkey);         
+	</script>
+    
+
+
+ 
+					
+						<span class="right">      	
+							<a href="/2020/03/25/Python——pandas/" title="阅读全文">阅读全文</a>	
+						</span>
+					
+				</div>
+			</div>
+		</div>
+	
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					
 	<a href="/2019/03/28/tips/" itemprop="url">
 		tips
 	</a>
@@ -931,7 +1031,7 @@ vim /etc/...
 	<div class="copyright">
 		<p>
 			 
-				&copy;2017 - 2019, content by mustard. All Rights Reserved.
+				&copy;2017 - 2020, content by mustard. All Rights Reserved.
 			
 			
 			
