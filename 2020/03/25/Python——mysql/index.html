@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      Hello World | 芥末
+      Python——mysql | 芥末
     
   </title>
   <meta name="author" content="mustard">
@@ -113,7 +113,7 @@
 				<!-- Page title -->
 				<p>
 					
-						当前文章&nbsp;:&nbsp;《Hello World》
+						当前文章&nbsp;:&nbsp;《Python——mysql》
 					
 				</p>
 				<!-- Progress bar -->
@@ -273,8 +273,8 @@
 	
 	<div class="article-title">
 		
-	<a href="/2019/01/08/hello-world/" itemprop="url">
-		Hello World
+	<a href="/2020/03/25/Python——mysql/" itemprop="url">
+		Python——mysql
 	</a>
 
 	</div>
@@ -283,17 +283,17 @@
 		<span>
 			
 	发布于
-	<a href="/2019/01/08/hello-world/" itemprop="url">
-		<time datetime="2019-01-08T15:37:09.785Z" itemprop="datePublished">
-	  		2019-01-08
+	<a href="/2020/03/25/Python——mysql/" itemprop="url">
+		<time datetime="2020-03-25T06:03:27.000Z" itemprop="datePublished">
+	  		2020-03-25
 	  </time>
 	</a> 
 
 	/
 	更新于
-	<a href="/2019/01/08/hello-world/" itemprop="url">
-		<time datetime="2019-01-08T15:37:09.785Z" itemprop="dateUpdated">
-	  		2019-01-08
+	<a href="/2020/03/25/Python——mysql/" itemprop="url">
+		<time datetime="2020-03-25T06:03:27.000Z" itemprop="dateUpdated">
+	  		2020-03-26
 	  </time>
 	</a> 	
 
@@ -301,12 +301,18 @@
 		/
 		<span>
 			<i class="fa fa-tags"></i>
-					
+			
+	
+		<a href="/tags/python/" class=" ">
+			python
+		</a>
+	
+		
 		</span>
 		/
 		
 
-    <span class="leancloud_visitors" id="/2019/01/08/hello-world/_visitors" data-url="/2019/01/08/hello-world/" data-title="Hello World">
+    <span class="leancloud_visitors" id="/2020/03/25/Python——mysql/_visitors" data-url="/2020/03/25/Python——mysql/" data-title="Python——mysql">
         热度
         <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
     </span>
@@ -315,7 +321,7 @@
 
 
 
-    <span class="leancloud_likes" id="/2019/01/08/hello-world/_likes" data-url="/2019/01/08/hello-world/" data-title="Hello World" rel="unlike">
+    <span class="leancloud_likes" id="/2020/03/25/Python——mysql/_likes" data-url="/2020/03/25/Python——mysql/" data-title="Python——mysql" rel="unlike">
         喜欢
         <i class="fa fa-heart"></i>
         <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
@@ -324,19 +330,66 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-	
+		<h1 id="python-Mysql操作"><a href="#python-Mysql操作" class="headerlink" title="python Mysql操作"></a>python Mysql操作</h1><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> MySQLdb
+db <span class="token operator">=</span> MySQLdb<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token string">"localhost"</span><span class="token punctuation">,</span> <span class="token string">"py_user"</span><span class="token punctuation">,</span> <span class="token string">"py_user"</span> <span class="token punctuation">,</span><span class="token string">"py_test"</span><span class="token punctuation">,</span> charset<span class="token operator">=</span><span class="token string">"utf8"</span><span class="token punctuation">)</span>
+cursor <span class="token operator">=</span> db<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 使用cursor()方法获取操作游标 </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>数据库连接测试</p>
+<pre class="line-numbers language-python"><code class="language-python">cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">"SELECT VERSION()"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 使用execute方法执行SQL语句</span>
+data <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchone<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 使用 fetchone() 方法获取一条数据</span>
+<span class="token keyword">print</span> <span class="token string">"mysql version : %s"</span> <span class="token operator">%</span>data <span class="token comment" spellcheck="true"># 输出版本号，测试数据库连接是否正确</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>数据插入</p>
+<ul>
+<li>单条数据</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python">sql <span class="token operator">=</span> <span class="token string">"INSERT INTO Persons(LastName,FirstName,Address,City) VALUES ('2','2','3','4');"</span>
+cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+db<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+  <span class="token comment" spellcheck="true"># 执行sql语句</span>
+  cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+  <span class="token comment" spellcheck="true"># 提交到数据库执行</span>
+  db<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+  <span class="token comment" spellcheck="true"># 发生错误时回滚</span>
+  db<span class="token punctuation">.</span>rollback<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">#关闭数据库连接</span>
+db<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>多条数据插入 （修改同理）<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> traceback
+List <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+List1 <span class="token operator">=</span> <span class="token punctuation">[</span>queue_id<span class="token punctuation">,</span>queue_name<span class="token punctuation">,</span>queue_area<span class="token punctuation">,</span>applicant<span class="token punctuation">,</span>maintainer<span class="token punctuation">,</span>p_account<span class="token punctuation">,</span>consumer<span class="token punctuation">,</span>
+  level1_threshold<span class="token punctuation">,</span>alarm<span class="token punctuation">,</span>level1_alarm_level<span class="token punctuation">,</span>
+  level2_threshold<span class="token punctuation">,</span>alarm<span class="token punctuation">,</span>level2_alarm_level<span class="token punctuation">,</span>
+  level3_threshold<span class="token punctuation">,</span>alarm<span class="token punctuation">,</span>level3_alarm_level<span class="token punctuation">,</span>
+  level4_threshold<span class="token punctuation">,</span>alarm<span class="token punctuation">,</span>level4_alarm_level<span class="token punctuation">]</span>
+Tuple <span class="token operator">=</span> tuple<span class="token punctuation">(</span>List1<span class="token punctuation">)</span>
+List<span class="token punctuation">.</span>append<span class="token punctuation">(</span>Tuple<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># executemany 格式必须是list嵌套tuple元组格式</span>
+tmp <span class="token operator">=</span> "INSERT INTO \
+cmq_monitor<span class="token punctuation">(</span>queue_id<span class="token punctuation">,</span>queue_name<span class="token punctuation">,</span>queue_area<span class="token punctuation">,</span>applicant<span class="token punctuation">,</span>maintainer<span class="token punctuation">,</span>p_account<span class="token punctuation">,</span>consumer<span class="token punctuation">,</span>\
+level1_threshold<span class="token punctuation">,</span>level1_alarm<span class="token punctuation">,</span>level1_alarm_level<span class="token punctuation">,</span>\
+level2_threshold<span class="token punctuation">,</span>level2_alarm<span class="token punctuation">,</span>level2_alarm_level<span class="token punctuation">,</span>\
+level3_threshold<span class="token punctuation">,</span>level3_alarm<span class="token punctuation">,</span>level3_alarm_level<span class="token punctuation">,</span>\
+level4_threshold<span class="token punctuation">,</span>level4_alarm<span class="token punctuation">,</span>level4_alarm_level<span class="token punctuation">)</span>\
+VALUES <span class="token punctuation">(</span><span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span><span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span><span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span><span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span><span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span><span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span> <span class="token operator">%</span>s<span class="token punctuation">,</span><span class="token operator">%</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>"
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+cursor<span class="token punctuation">.</span>executemany<span class="token punctuation">(</span>tmp<span class="token punctuation">,</span>List<span class="token punctuation">)</span>
+db<span class="token punctuation">.</span>commit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+db<span class="token punctuation">.</span>rollback<span class="token punctuation">(</span><span class="token punctuation">)</span>
+traceback<span class="token punctuation">.</span>print_exc<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">finally</span><span class="token punctuation">:</span>
+cursor<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="TIPS"><a href="#TIPS" class="headerlink" title="TIPS"></a>TIPS</h1>	
 	</div>
 	
-	<div id="current-post-cover" data-scr="/img/cart_cover.jpg"></div>
+	<div id="current-post-cover" data-scr="https://s2.ax1x.com/2019/01/08/FqTlG9.jpg"></div>
 
 	<!-- relate post, comment...-->
 	<div class="investment-container">
@@ -350,12 +403,8 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/2019/01/09/django/" title="django" rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/2019/01/08/ldap/" title="ldap" rel="next">
+			<a href="/2020/03/25/Python——pandas/" title="Python——pandas" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -370,24 +419,6 @@
 
 <div class="relate-post">
 	<ul>
-		
-				<li>
-					<div>
-						<a href="/2020/03/25/Python——mysql/" title="Python——mysql">
-							Python——mysql
-						</a>
-						<p>
-							python Mysql操作import MySQLdb
-db = MySQLdb.connect("localhost", "py_user", "py_user" ,"py_test", charset="utf8")
-curso...
-						</p>
-					</div>
-
-					<a href="/2020/03/25/Python——mysql/" title="Python——mysql">				
-						<img src="https://s2.ax1x.com/2019/01/08/FqTlG9.jpg" class="relateImg" alt="Python——mysql">
-					</a>
-				</li>											
-		
 		
 				<li>
 					<div>
@@ -502,6 +533,22 @@ pi...
 
 					<a href="/2019/01/08/vps/" title="vps + shadowsocks 优雅看世界">				
 						<img src="https://s2.ax1x.com/2019/01/08/FqTlG9.jpg" class="relateImg" alt="vps + shadowsocks 优雅看世界">
+					</a>
+				</li>											
+		
+		
+				<li>
+					<div>
+						<a href="/2019/01/08/hello-world/" title="Hello World">
+							Hello World
+						</a>
+						<p>
+							Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using ...
+						</p>
+					</div>
+
+					<a href="/2019/01/08/hello-world/" title="Hello World">				
+						<img src="/img/cart_cover.jpg" class="relateImg" alt="Hello World">
 					</a>
 				</li>											
 		
