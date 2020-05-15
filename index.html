@@ -290,14 +290,16 @@
 				<div class="post-content">
 					
 						
-							python Mysql操作import MySQLdb
+							python Mysql操作yum install python-devel
+pip install MySQL-python
+import MySQLdb
 db = MySQLdb.connect("localhost", "py_user", "py_user" ,"py_test", charset="utf8")
+# 数据库地址，用户名，密码，数据库 
 cursor = db.cursor() # 使用cursor()方法获取操作游标 
 
 数据库连接测试
 cursor.execute("SELECT VERSION()") # 使用execute方法执行SQL语句
-data = cursor.fetchone() # 使用 fetchone() 方法获取一条数据
-print "mysql version : %s" ...
+data = ...
 						
 					
 				</div>

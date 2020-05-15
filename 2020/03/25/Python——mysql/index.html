@@ -293,7 +293,7 @@
 	更新于
 	<a href="/2020/03/25/Python——mysql/" itemprop="url">
 		<time datetime="2020-03-25T06:03:27.000Z" itemprop="dateUpdated">
-	  		2020-03-26
+	  		2020-05-15
 	  </time>
 	</a> 	
 
@@ -330,9 +330,12 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<h1 id="python-Mysql操作"><a href="#python-Mysql操作" class="headerlink" title="python Mysql操作"></a>python Mysql操作</h1><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> MySQLdb
+		<h1 id="python-Mysql操作"><a href="#python-Mysql操作" class="headerlink" title="python Mysql操作"></a>python Mysql操作</h1><pre class="line-numbers language-bash"><code class="language-bash">yum <span class="token function">install</span> python-devel
+pip <span class="token function">install</span> MySQL-python<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> MySQLdb
 db <span class="token operator">=</span> MySQLdb<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token string">"localhost"</span><span class="token punctuation">,</span> <span class="token string">"py_user"</span><span class="token punctuation">,</span> <span class="token string">"py_user"</span> <span class="token punctuation">,</span><span class="token string">"py_test"</span><span class="token punctuation">,</span> charset<span class="token operator">=</span><span class="token string">"utf8"</span><span class="token punctuation">)</span>
-cursor <span class="token operator">=</span> db<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 使用cursor()方法获取操作游标 </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true"># 数据库地址，用户名，密码，数据库 </span>
+cursor <span class="token operator">=</span> db<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 使用cursor()方法获取操作游标 </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>数据库连接测试</p>
 <pre class="line-numbers language-python"><code class="language-python">cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token string">"SELECT VERSION()"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 使用execute方法执行SQL语句</span>
@@ -386,7 +389,15 @@ cursor<span class="token punctuation">.</span>close<span class="token punctuatio
 </ul>
 </li>
 </ul>
-<h1 id="TIPS"><a href="#TIPS" class="headerlink" title="TIPS"></a>TIPS</h1>	
+<h1 id="TIPS"><a href="#TIPS" class="headerlink" title="TIPS"></a>TIPS</h1><ul>
+<li>1、数据库连接失败<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># TypeError: an integer is required (got type str)</span>
+<span class="token comment" spellcheck="true"># 原因： mysql默认连接3306端口，如果是其他端口需要使用port字段</span>
+<span class="token comment" spellcheck="true"># port是数字，不是字符串，不要使用”“</span>
+db <span class="token operator">=</span> MySQLdb.connect<span class="token punctuation">(</span><span class="token string">"localhost"</span>, <span class="token string">"py_user"</span>, <span class="token string">"py_user"</span> ,<span class="token string">"py_test"</span>, charset<span class="token operator">=</span><span class="token string">"utf8"</span>,port<span class="token operator">=</span>3311<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>2、插入数据报错 单引号转义问题<br>检查mysql语句，<code>insert into tables(name,pass) values (%s,%s)</code></li>
+</ul>
+	
 	</div>
 	
 	<div id="current-post-cover" data-scr="https://s2.ax1x.com/2019/01/08/FqTlG9.jpg"></div>
